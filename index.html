@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>จีนทุกวัน – ฝึกจำคำศัพท์ภาษาจีน</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>字</text></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600&family=Noto+Serif+SC:wght@500;700&display=swap">
+<style>
+:root{--bg:#edf1f3;--card:#fff;--ink:#12232b;--mute:#5d707a;--line:#cbd5da;--jade:#0e7c66;--jade-t:#dff3ee;--seal:#c23b2e;--seal-t:#fbe6e3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1b21;--card:#17272f;--ink:#e6eef1;--mute:#93a7b0;--line:#2a3e47;--jade:#3cc3a3;--jade-t:#16372f;--seal:#f06b5b;--seal-t:#3a1f1c}}
+:root[data-theme="dark"]{--bg:#0f1b21;--card:#17272f;--ink:#e6eef1;--mute:#93a7b0;--line:#2a3e47;--jade:#3cc3a3;--jade-t:#16372f;--seal:#f06b5b;--seal-t:#3a1f1c}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 "Noto Sans Thai",system-ui,sans-serif;min-height:100vh}
+.wrap{max-width:520px;margin:0 auto;padding:16px 16px 40px}
+header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px}
+h1{font:700 22px/1.2 "Noto Serif SC","Noto Sans Thai",serif;margin:0}
+h1 small{font:400 13px "Noto Sans Thai",sans-serif;color:var(--mute);margin-left:8px}
+.tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:12px}
+.tabs button{border:0;background:none;color:var(--mute);padding:10px;border-radius:9px;font:600 15px "Noto Sans Thai",sans-serif;cursor:pointer}
+.tabs button.on{background:var(--jade);color:#fff}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:8px;-webkit-overflow-scrolling:touch}
+.chips button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;font:400 14px "Noto Sans Thai",sans-serif;cursor:pointer}
+.chips button.on{border-color:var(--jade);background:var(--jade-t);color:var(--jade);font-weight:600}
+.opt{display:flex;align-items:center;gap:8px;color:var(--mute);font-size:14px;margin:4px 0 12px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 20px;text-align:center;min-height:300px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.card::after{content:"";position:absolute;top:14px;right:14px;width:10px;height:10px;background:var(--seal);border-radius:2px}
+.hz{font:700 clamp(56px,20vw,104px)/1.1 "Noto Serif SC","Songti SC","SimSun",serif;word-break:keep-all}
+.hz.sm{font-size:clamp(40px,14vw,64px)}
+.py{font-size:24px;color:var(--jade);font-weight:600;margin-top:10px}
+.th{font-size:20px;margin-top:4px}
+.mn{font-size:20px;margin-top:8px;padding:6px 16px;background:var(--seal-t);color:var(--seal);border-radius:10px;font-weight:600}
+.ans{transition:opacity .2s,filter .2s}
+.card.veil .ans{opacity:0;filter:blur(8px);pointer-events:none}
+.card.veil::before{content:"แตะการ์ดเพื่อดูคำตอบ";position:absolute;bottom:18px;color:var(--mute);font-size:14px}
+.row{display:flex;gap:10px;margin-top:12px}
+.row button,.next{flex:1;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:13px 10px;font:600 16px "Noto Sans Thai",sans-serif;cursor:pointer}
+.row button.main,.next{background:var(--jade);border-color:var(--jade);color:#fff}
+.row button.on{border-color:var(--jade);color:var(--jade)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--jade);outline-offset:2px}
+.say{border:0;background:var(--jade-t);color:var(--jade);border-radius:999px;padding:10px 20px;font:600 16px "Noto Sans Thai",sans-serif;cursor:pointer;margin-top:12px}
+.q{font-size:15px;color:var(--mute);margin-bottom:8px}
+.choices{display:grid;gap:10px;margin-top:12px}
+.choices button{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;padding:14px;font:600 18px "Noto Sans Thai",sans-serif;cursor:pointer;text-align:center}
+.choices button.zh{font:700 30px "Noto Serif SC",serif}
+.choices button.ok{border-color:var(--jade);background:var(--jade-t);color:var(--jade)}
+.choices button.bad{border-color:var(--seal);background:var(--seal-t);color:var(--seal)}
+.choices button:disabled{cursor:default}
+.score{display:flex;justify-content:space-between;color:var(--mute);font-size:14px;margin-bottom:10px}
+.score b{color:var(--ink)}
+.next{display:block;width:100%;margin-top:12px}
+.fb{margin-top:14px;font-size:15px}
+.fb .py{font-size:20px;margin-top:0}
+.note{margin-top:22px;color:var(--mute);font-size:13px;text-align:center}
+#q{width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:12px 14px;font:400 16px "Noto Sans Thai",sans-serif;margin-bottom:6px}
+#lst h2{font:700 17px "Noto Sans Thai",sans-serif;margin:20px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--jade)}
+#lst h2 span{font-weight:400;font-size:13px;color:var(--mute);margin-left:6px}
+.it{display:grid;grid-template-columns:76px 1fr 40px;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin-bottom:6px;cursor:pointer}
+.it .zh{font:700 26px/1.2 "Noto Serif SC","Songti SC",serif;word-break:keep-all}
+.it .p{color:var(--jade);font-weight:600}
+.it .t{font-size:14px;color:var(--mute)}
+.it button{border:0;background:var(--jade-t);color:var(--jade);border-radius:50%;width:36px;height:36px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.ans{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><h1>จีนทุกวัน<small>汉语日常词</small></h1><span id="count" style="color:var(--mute);font-size:14px"></span></header>
+  <div class="tabs" role="tablist">
+    <button id="tLearn" class="on" role="tab">ฝึกจำคำ</button>
+    <button id="tQuiz" role="tab">ทดสอบ</button>
+    <button id="tList" role="tab">รายการคำ</button>
+    <button id="tSentence" role="tab">เรียงประโยค</button>
+  </div>
+  <div class="chips" id="chips"></div>
+  <div id="stage"></div>
+  <p class="note">เสียงอ่านใช้เสียงภาษาจีนของเครื่อง หากไม่มีเสียง ให้เพิ่มภาษาจีน (Mandarin) ในการตั้งค่าเสียงของอุปกรณ์</p>
+</div>
+<script>
+const RAW=`#ทักทาย
+你好|nǐ hǎo|หนี่ห่าว|สวัสดี
+谢谢|xièxie|เซี่ยเซีย|ขอบคุณ
+不客气|bú kèqi|ปู๋เค่อชี่|ไม่ต้องเกรงใจ
+对不起|duìbuqǐ|ตุ้ยปู้ฉี่|ขอโทษ
+没关系|méi guānxi|เหมยกวานซี|ไม่เป็นไร
+再见|zàijiàn|ไจ้เจี้ยน|ลาก่อน
+早上好|zǎoshang hǎo|จ่าวช่างห่าว|สวัสดีตอนเช้า
+晚安|wǎn’ān|หว่านอัน|ราตรีสวัสดิ์
+请|qǐng|ฉิ่ง|กรุณา / เชิญ
+欢迎|huānyíng|ฮวนอิ๋ง|ยินดีต้อนรับ
+请问|qǐngwèn|ฉิ่งเวิ่น|ขอถามหน่อย
+我不懂|wǒ bù dǒng|หว่อปู้ตั่ง|ฉันไม่เข้าใจ
+加油|jiāyóu|เจียโหยว|สู้ ๆ / เป็นกำลังใจ
+#คำสรรพนามและพื้นฐาน
+我|wǒ|หว่อ|ฉัน
+你|nǐ|หนี่|คุณ
+他|tā|ทา|เขา (ชาย)
+她|tā|ทา|เธอ (หญิง)
+我们|wǒmen|หว่อเมิน|พวกเรา
+是|shì|ซื่อ|ใช่ / เป็น
+不是|bú shì|ปู๋ซื่อ|ไม่ใช่
+不|bù|ปู้|ไม่
+有|yǒu|โหย่ว|มี
+没有|méiyǒu|เหมยโหย่ว|ไม่มี
+什么|shénme|เสินเมอ|อะไร
+哪里|nǎlǐ|หน่าหลี่|ที่ไหน
+这里|zhèlǐ|เจ้อหลี่|ที่นี่
+#ตัวเลข
+零|líng|หลิง|ศูนย์
+一|yī|อี|หนึ่ง
+二|èr|เอ้อร์|สอง
+三|sān|ซาน|สาม
+四|sì|ซื่อ|สี่
+五|wǔ|อู่|ห้า
+六|liù|ลิ่ว|หก
+七|qī|ชี|เจ็ด
+八|bā|ปา|แปด
+九|jiǔ|จิ่ว|เก้า
+十|shí|สือ|สิบ
+百|bǎi|ป่าย|ร้อย
+千|qiān|เชียน|พัน
+#ครอบครัวและคน
+爸爸|bàba|ป้าป๋า|พ่อ
+妈妈|māma|มาม่า|แม่
+哥哥|gēge|เกอเกอ|พี่ชาย
+姐姐|jiějie|เจี่ยเจี่ย|พี่สาว
+弟弟|dìdi|ตี้ตี้|น้องชาย
+妹妹|mèimei|เม่ยเม่ย|น้องสาว
+朋友|péngyou|เผิงโย่ว|เพื่อน
+孩子|háizi|ไหเจ่อ|เด็ก / ลูก
+老师|lǎoshī|เหล่าชือ|ครู
+学生|xuésheng|เสวียเซิง|นักเรียน
+#อาหารและเครื่องดื่ม
+水|shuǐ|สุ่ย|น้ำ
+茶|chá|ฉา|ชา
+咖啡|kāfēi|คาเฟย|กาแฟ
+米饭|mǐfàn|หมี่ฟั่น|ข้าวสวย
+面条|miàntiáo|เมี่ยนเถียว|บะหมี่
+肉|ròu|โร่ว|เนื้อ
+鸡肉|jīròu|จีโร่ว|เนื้อไก่
+鱼|yú|หยวี๋|ปลา
+菜|cài|ไช่|ผัก / กับข้าว
+水果|shuǐguǒ|สุ่ยกั่ว|ผลไม้
+苹果|píngguǒ|ผิงกั่ว|แอปเปิล
+吃|chī|ชือ|กิน
+喝|hē|เหอ|ดื่ม
+好吃|hǎochī|ห่าวชือ|อร่อย
+饿|è|เอ้อ|หิว
+渴|kě|เข่อ|กระหายน้ำ
+#สถานที่และการเดินทาง
+家|jiā|เจีย|บ้าน
+学校|xuéxiào|เสวียเซี่ยว|โรงเรียน
+医院|yīyuàn|อีเยวี่ยน|โรงพยาบาล
+商店|shāngdiàn|ซางเตี้ยน|ร้านค้า
+饭店|fàndiàn|ฟั่นเตี้ยน|ร้านอาหาร / โรงแรม
+厕所|cèsuǒ|เช่อสั่ว|ห้องน้ำ
+机场|jīchǎng|จีฉ่าง|สนามบิน
+地铁|dìtiě|ตี้เถี่ย|รถไฟใต้ดิน
+出租车|chūzūchē|ชูจูเชอ|แท็กซี่
+去|qù|ชวี่|ไป
+来|lái|ไหล|มา
+左|zuǒ|จั่ว|ซ้าย
+右|yòu|โย่ว|ขวา
+#กริยาที่ใช้บ่อย
+要|yào|เย่า|ต้องการ
+想|xiǎng|เสี่ยง|อยาก / คิด
+看|kàn|คั่น|ดู
+听|tīng|ทิง|ฟัง
+说|shuō|ซัว|พูด
+买|mǎi|หมาย|ซื้อ
+卖|mài|ม่าย|ขาย
+睡觉|shuìjiào|ซุ่ยเจี้ยว|นอนหลับ
+工作|gōngzuò|กงจั้ว|ทำงาน
+学习|xuéxí|เสวียสี๋|เรียน
+知道|zhīdào|จือเต้า|รู้
+喜欢|xǐhuan|สี่ฮวน|ชอบ
+爱|ài|ไอ้|รัก
+#เวลา
+今天|jīntiān|จินเทียน|วันนี้
+明天|míngtiān|หมิงเทียน|พรุ่งนี้
+昨天|zuótiān|จั๋วเทียน|เมื่อวาน
+现在|xiànzài|เซี่ยนไจ้|ตอนนี้
+点|diǎn|เตี่ยน|นาฬิกา (โมง)
+分钟|fēnzhōng|เฟินจง|นาที
+星期|xīngqī|ซิงชี|สัปดาห์
+月|yuè|เยวี่ย|เดือน
+年|nián|เหนียน|ปี
+#คำคุณศัพท์และราคา
+大|dà|ต้า|ใหญ่
+小|xiǎo|เสี่ยว|เล็ก
+多|duō|ตัว|มาก
+少|shǎo|เส่า|น้อย
+好|hǎo|ห่าว|ดี
+热|rè|เร่อ|ร้อน
+冷|lěng|เหลิ่ง|หนาว
+新|xīn|ซิน|ใหม่
+漂亮|piàoliang|เพี่ยวเลี่ยง|สวย
+高兴|gāoxìng|เกาซิ่ง|ดีใจ
+贵|guì|กุ้ย|แพง
+便宜|piányi|เผียนอี๋|ถูก (ราคา)
+钱|qián|เฉียน|เงิน
+多少钱|duōshao qián|ตัวเสาเฉียน|ราคาเท่าไร
+#ในเมือง
+街道|jiēdào|เจียเต้า|ถนน
+银行|yínháng|อิ๋นหาง|ธนาคาร
+公园|gōngyuán|กงเหยวี๋ยน|สวนสาธารณะ
+警察|jǐngchá|จิ่งฉา|ตำรวจ
+邮局|yóujú|โหยวจวี๋|ไปรษณีย์
+红绿灯|hónglǜdēng|หงหลวี่เติง|ไฟจราจร
+路口|lùkǒu|ลู่โข่ว|ทางแยก
+桥|qiáo|เฉียว|สะพาน
+酒店|jiǔdiàn|จิ่วเตี้ยน|โรงแรม
+电影院|diànyǐngyuàn|เตี้ยนอิ่งเยวี่ยน|โรงภาพยนตร์
+博物馆|bówùguǎn|ปั๋วอู้กว่าน|พิพิธภัณฑ์
+#ห้างสรรพสินค้า
+商场|shāngchǎng|ซางฉ่าง|ห้างสรรพสินค้า
+超市|chāoshì|เชาซื่อ|ซูเปอร์มาร์เก็ต
+电梯|diàntī|เตี้ยนทิ|ลิฟต์
+楼|lóu|โหลว|ชั้น / อาคาร
+衣服|yīfu|อีฟู|เสื้อผ้า
+鞋|xié|เสีย|รองเท้า
+打折|dǎzhé|ต่าเจ๋อ|ลดราคา
+试穿|shìchuān|ซื่อชวน|ลองใส่
+收银台|shōuyíntái|โซวอิ๋นไถ|เคาน์เตอร์ชำระเงิน
+入口|rùkǒu|รู่โข่ว|ทางเข้า
+出口|chūkǒu|ชูโข่ว|ทางออก
+#สนามบิน
+飞机|fēijī|เฟยจี|เครื่องบิน
+机票|jīpiào|จีเพี่ยว|ตั๋วเครื่องบิน
+护照|hùzhào|ฮู่เจ้า|หนังสือเดินทาง
+登机牌|dēngjīpái|เติงจีผาย|บอร์ดดิงพาส
+行李|xíngli|สิงหลี่|สัมภาระ
+海关|hǎiguān|ไห่กวาน|ศุลกากร
+航班|hángbān|หางปาน|เที่ยวบิน
+登机口|dēngjīkǒu|เติงจีโข่ว|ประตูขึ้นเครื่อง
+安检|ānjiǎn|อานเจี่ยน|ตรวจความปลอดภัย
+起飞|qǐfēi|ฉี่เฟย|เครื่องขึ้น
+到达|dàodá|เต้าต๋า|ถึง / ขาเข้า
+延误|yánwù|เหยียนอู้|ล่าช้า
+#ร้านค้า
+老板|lǎobǎn|เหล่าป่าน|เจ้าของร้าน
+便宜点|piányi diǎn|เผียนอี๋เตี่ยน|ลดหน่อย
+可以|kěyǐ|เข่อหยี่|ได้
+试一下|shì yíxià|ซื่ออีเซี่ย|ขอลองหน่อย
+尺码|chǐmǎ|ฉื่อหม่า|ไซซ์
+颜色|yánsè|เหยียนเซ่อ|สี
+现金|xiànjīn|เซี่ยนจิน|เงินสด
+刷卡|shuākǎ|ซวาข่า|รูดบัตร
+扫码|sǎomǎ|เส่าหม่า|สแกนคิวอาร์
+发票|fāpiào|ฟาเพี่ยว|ใบเสร็จ
+包|bāo|เปา|กระเป๋า
+#ร้านอาหาร
+菜单|càidān|ไช่ตาน|เมนู
+服务员|fúwùyuán|ฝูอู้เหยวี๋ยน|พนักงานเสิร์ฟ
+点菜|diǎn cài|เตี่ยนไช่|สั่งอาหาร
+买单|mǎidān|หมายตาน|เช็คบิล
+筷子|kuàizi|ไคว่จึ|ตะเกียบ
+勺子|sháozi|เสาจึ|ช้อน
+碗|wǎn|หวั่น|ชาม
+杯子|bēizi|เปยจึ|แก้ว
+辣|là|ล่า|เผ็ด
+不要辣|bú yào là|ปู๋เย่าล่า|ไม่เอาเผ็ด
+打包|dǎbāo|ต่าเปา|ห่อกลับบ้าน
+素食|sùshí|ซู่สือ|อาหารมังสวิรัติ
+汤|tāng|ทัง|ซุป
+啤酒|píjiǔ|ผีจิ่ว|เบียร์
+#ร้านสะดวกซื้อ
+便利店|biànlìdiàn|เปี้ยนลี่เตี้ยน|ร้านสะดวกซื้อ
+零食|língshí|หลิงสือ|ขนมขบเคี้ยว
+饮料|yǐnliào|อิ่นเลี่ยว|เครื่องดื่ม
+矿泉水|kuàngquánshuǐ|ควั่งเฉวียนสุ่ย|น้ำแร่ / น้ำดื่ม
+面包|miànbāo|เมี่ยนเปา|ขนมปัง
+牛奶|niúnǎi|หนิวไน่|นม
+鸡蛋|jīdàn|จีตั้น|ไข่ไก่
+雨伞|yǔsǎn|หวี่ส่าน|ร่ม
+充电器|chōngdiànqì|ชงเตี้ยนชี่|ที่ชาร์จ
+纸巾|zhǐjīn|จื่อจิน|กระดาษทิชชู่
+加热|jiārè|เจียเร่อ|อุ่น
+袋子|dàizi|ไต้จึ|ถุง
+#ร้านขายยา
+药店|yàodiàn|เย่าเตี้ยน|ร้านขายยา
+药|yào|เย่า|ยา
+医生|yīshēng|อีเซิง|หมอ
+感冒药|gǎnmàoyào|ก่านเมาเย่า|ยาแก้หวัด
+退烧药|tuìshāoyào|ทุ่ยเซาเย่า|ยาลดไข้
+止痛药|zhǐtòngyào|จื่อท่งเย่า|ยาแก้ปวด
+头疼|tóuténg|โถวเถิง|ปวดหัว
+肚子疼|dùzi téng|ตู้จึเถิง|ปวดท้อง
+发烧|fāshāo|ฟาเซา|มีไข้
+咳嗽|késou|เขอโส่ว|ไอ
+过敏|guòmǐn|กั้วหมิ่น|แพ้
+创可贴|chuāngkětiē|ชวงเข่อเทีย|พลาสเตอร์ปิดแผล
+口罩|kǒuzhào|โข่วเจ้า|หน้ากากอนามัย
+#การเดินทาง
+地图|dìtú|ตี้ถู|แผนที่
+路线|lùxiàn|ลู่เซี่ยน|เส้นทาง
+票|piào|เพี่ยว|ตั๋ว
+车站|chēzhàn|เชอจั้น|สถานี
+直走|zhí zǒu|จื๋อโจ่ว|เดินตรงไป
+左转|zuǒzhuǎn|จั่วจ่วน|เลี้ยวซ้าย
+右转|yòuzhuǎn|โย่วจ่วน|เลี้ยวขวา
+远|yuǎn|เหยวี่ยน|ไกล
+近|jìn|จิ้น|ใกล้
+到了|dào le|เต้าเลอ|ถึงแล้ว
+迷路|mílù|หมี๋ลู่|หลงทาง
+停|tíng|ทิง|จอด / หยุด
+预订|yùdìng|ยวี่ติ้ง|จอง
+#ยานพาหนะ
+汽车|qìchē|ชี่เชอ|รถยนต์
+公共汽车|gōnggòng qìchē|กงก้งชี่เชอ|รถเมล์
+火车|huǒchē|ฮั่วเชอ|รถไฟ
+高铁|gāotiě|เกาเถี่ย|รถไฟความเร็วสูง
+自行车|zìxíngchē|จื้อสิงเชอ|จักรยาน
+摩托车|mótuōchē|หมัวถัวเชอ|มอเตอร์ไซค์
+船|chuán|ฉวน|เรือ
+网约车|wǎngyuēchē|หวั่งเยวียเชอ|รถเรียกผ่านแอป
+电动车|diàndòngchē|เตี้ยนต้งเชอ|สกู๊ตเตอร์ไฟฟ้า
+卡车|kǎchē|ข่าเชอ|รถบรรทุก
+加油站|jiāyóuzhàn|เจียโหยวจั้น|ปั๊มน้ำมัน
+司机|sījī|ซือจี|คนขับรถ
+#สัตว์
+狗|gǒu|โก่ว|หมา
+猫|māo|เหมา|แมว
+鸟|niǎo|เหนี่ยว|นก
+马|mǎ|หม่า|ม้า
+牛|niú|หนิว|วัว
+羊|yáng|หยาง|แกะ / แพะ
+猪|zhū|จู|หมู
+鸡|jī|จี|ไก่
+鸭|yā|ย่า|เป็ด
+兔子|tùzi|ทู่จึ|กระต่าย
+老虎|lǎohǔ|เหล่าหู่|เสือ
+大象|dàxiàng|ต้าเซี่ยง|ช้าง
+熊猫|xióngmāo|สยงเมา|แพนด้า
+猴子|hóuzi|โหวจึ|ลิง
+老鼠|lǎoshǔ|เหล่าสู่|หนู
+蛇|shé|เสอ|งู
+蚊子|wénzi|เหวินจึ|ยุง
+龙|lóng|หลง|มังกร
+#คำช่วยและคำถามสำคัญ
+的|de|เตอ|คำช่วยแสดงความเป็นเจ้าของ / ขยายคำนาม
+了|le|เลอ|คำช่วยแสดงการเปลี่ยนแปลงหรือเหตุการณ์แล้ว
+吗|ma|มะ|ไหม (ใช้ทำคำถาม)
+呢|ne|เนอ|แล้ว...ล่ะ / คำช่วยถาม
+和|hé|เหอ|และ / กับ
+也|yě|เหย่|ก็ / ด้วย
+都|dōu|โตว|ทั้งหมด / ต่างก็
+很|hěn|เหิ่น|มาก / ใช้เชื่อมคำคุณศัพท์
+太|tài|ไท่|เกินไป / มาก
+最|zuì|จุ้ย|ที่สุด
+因为|yīnwèi|อินเว่ย|เพราะว่า
+所以|suǒyǐ|สั่วอี่|ดังนั้น
+但是|dànshì|ต้านซื่อ|แต่
+如果|rúguǒ|หรูกั่ว|ถ้าหาก
+这|zhè|เจ้อ|นี่ / นี้
+那|nà|น่า|นั่น / นั้น
+谁|shéi|เสย|ใคร
+为什么|wèishénme|เว่ยเสินเมอ|ทำไม
+怎么|zěnme|เจิ่นเมอ|อย่างไร
+怎么样|zěnmeyàng|เจิ่นเมอย่าง|เป็นอย่างไร
+多少|duōshao|ตัวเส่า|เท่าไร / จำนวนเท่าไร
+几|jǐ|จี่|กี่
+哪|nǎ|หน่า|ไหน
+什么时候|shénme shíhou|เสินเมอ สือโห้ว|เมื่อไร
+#ลักษณนามและคำบอกจำนวน
+个|gè|เก้อ|ลักษณนามทั่วไป
+本|běn|เปิ่น|ลักษณนามหนังสือ
+杯|bēi|เปย|แก้ว / ลักษณนามเครื่องดื่ม
+块|kuài|ไคว้|หยวน / ก้อน / ชิ้น
+张|zhāng|จาง|ลักษณนามของแผ่นหรือสิ่งแบน
+只|zhī|จือ|ลักษณนามสัตว์บางชนิด
+些|xiē|เซีย|บางส่วน / จำนวนหนึ่ง
+两|liǎng|เหลี่ยง|สอง (ใช้บอกจำนวน)
+第一|dì-yī|ตี้อี|ที่หนึ่ง / ลำดับแรก
+半|bàn|ปั้น|ครึ่ง
+#วันและช่วงเวลา
+小时|xiǎoshí|เสี่ยวสือ|ชั่วโมง
+分钟|fēnzhōng|เฟินจง|นาที
+时候|shíhou|สือโห้ว|เวลา / ตอนที่
+早上|zǎoshang|จ่าวช่าง|ตอนเช้า
+上午|shàngwǔ|ช่างอู่|ช่วงสาย
+中午|zhōngwǔ|จงอู่|เที่ยง
+下午|xiàwǔ|เซี่ยอู่|ตอนบ่าย
+晚上|wǎnshang|หว่านช่าง|ตอนเย็น / กลางคืน
+每天|měitiān|เหม่ยเทียน|ทุกวัน
+周末|zhōumò|โจวโม่|วันสุดสัปดาห์
+星期一|xīngqī yī|ซิงชีอี|วันจันทร์
+星期二|xīngqī èr|ซิงชีเอ้อร์|วันอังคาร
+星期三|xīngqī sān|ซิงชีซาน|วันพุธ
+星期四|xīngqī sì|ซิงชีซื่อ|วันพฤหัสบดี
+星期五|xīngqī wǔ|ซิงชีอู่|วันศุกร์
+星期六|xīngqī liù|ซิงชีลิ่ว|วันเสาร์
+星期天|xīngqī tiān|ซิงชีเทียน|วันอาทิตย์
+#คำกริยาใช้สร้างประโยค
+在|zài|ไจ้|อยู่ที่ / กำลัง
+做|zuò|จั้ว|ทำ
+给|gěi|เก่ย|ให้
+找|zhǎo|เจ่า|หา
+认识|rènshi|เริ่นชื่อ|รู้จัก
+觉得|juéde|เจวี๋ยเตอ|รู้สึก / คิดว่า
+明白|míngbai|หมิงไป๋|เข้าใจ
+帮助|bāngzhù|ปางจู้|ช่วย
+等|děng|เติ่ง|รอ
+开|kāi|คาย|เปิด / ขับ
+关|guān|กวาน|ปิด
+开始|kāishǐ|คายสื่อ|เริ่ม
+结束|jiéshù|เจี๋ยซู่|จบ
+准备|zhǔnbèi|จุ่นเป้ย|เตรียม
+告诉|gàosu|เก้าซู่|บอก
+问|wèn|เวิ่น|ถาม
+回答|huídá|หุยต๋า|ตอบ
+觉得|juéde|เจวี๋ยเตอ|คิดว่า / รู้สึกว่า
+休息|xiūxi|ซิวซี|พักผ่อน
+起床|qǐchuáng|ฉี่ฉวง|ตื่นนอน
+洗|xǐ|สี่|ล้าง / ซัก
+走|zǒu|โจ่ว|เดิน / ไป
+跑步|pǎobù|เผ่าปู้|วิ่งออกกำลังกาย
+玩|wán|หวาน|เล่น
+旅行|lǚxíng|หลวี่สิง|ท่องเที่ยว
+#คนและความสัมพันธ์
+您|nín|หนิน|คุณ (สุภาพ)
+它|tā|ทา|มัน (สัตว์ / สิ่งของ)
+她们|tāmen|ทาเมิน|พวกเธอ
+他们|tāmen|ทาเมิน|พวกเขา
+大家|dàjiā|ต้าเจีย|ทุกคน
+人|rén|เหริน|คน
+男人|nánrén|หนานเหริน|ผู้ชาย
+女人|nǚrén|หนี่ว์เหริน|ผู้หญิง
+同学|tóngxué|ถงเสวีย|เพื่อนร่วมชั้น
+同事|tóngshì|ถงซื่อ|เพื่อนร่วมงาน
+先生|xiānsheng|เซียนเซิง|คุณผู้ชาย / นาย
+小姐|xiǎojiě|เสี่ยวเจี่ย|คุณผู้หญิง
+名字|míngzi|หมิงจึ|ชื่อ
+#บ้านและสิ่งของ
+房间|fángjiān|ฝางเจียน|ห้อง
+门|mén|เหมิน|ประตู
+桌子|zhuōzi|จัวจึ|โต๊ะ
+椅子|yǐzi|อี่จึ|เก้าอี้
+床|chuáng|ฉวง|เตียง
+手机|shǒujī|โส่วจี|โทรศัพท์มือถือ
+电脑|diànnǎo|เตี้ยนเหน่า|คอมพิวเตอร์
+电视|diànshì|เตี้ยนซื่อ|โทรทัศน์
+书|shū|ซู|หนังสือ
+笔|bǐ|ปี่|ปากกา
+东西|dōngxi|ตงซี|สิ่งของ
+钥匙|yàoshi|เย่าชื่อ|กุญแจ
+#ร่างกายและสุขภาพ
+身体|shēntǐ|เซินถี่|ร่างกาย / สุขภาพ
+头|tóu|โถว|ศีรษะ
+眼睛|yǎnjing|เหยี่ยนจิง|ตา
+耳朵|ěrduo|เอ่อร์ตัว|หู
+嘴|zuǐ|จุ่ย|ปาก
+手|shǒu|โส่ว|มือ
+脚|jiǎo|เจี่ยว|เท้า
+疼|téng|เถิง|เจ็บ / ปวด
+累|lèi|เล่ย|เหนื่อย
+#สภาพอากาศและธรรมชาติ
+天气|tiānqì|เทียนชี่|สภาพอากาศ
+下雨|xiàyǔ|เซี่ยอวี่|ฝนตก
+下雪|xiàxuě|เซี่ยเสวี่ย|หิมะตก
+太阳|tàiyáng|ไท่หยาง|ดวงอาทิตย์
+风|fēng|เฟิง|ลม
+云|yún|หยุน|เมฆ
+晴天|qíngtiān|ฉิงเทียน|อากาศแจ่มใส
+阴天|yīntiān|อินเทียน|ฟ้าครึ้ม
+#คำคุณศัพท์และความรู้สึก
+忙|máng|หมาง|ยุ่ง
+累|lèi|เล่ย|เหนื่อย
+开心|kāixīn|คายซิน|มีความสุข
+难|nán|หนาน|ยาก
+容易|róngyì|หรงอี้|ง่าย
+快|kuài|ไคว้|เร็ว
+慢|màn|ม่าน|ช้า
+对|duì|ตุ้ย|ถูกต้อง / ใช่
+错|cuò|ชั่ว|ผิด
+方便|fāngbiàn|ฟางเปี้ยน|สะดวก
+远|yuǎn|เหยวี่ยน|ไกล
+近|jìn|จิ้น|ใกล้
+#คำสุภาพและใช้ในชีวิตประจำวัน
+请坐|qǐng zuò|ฉิ่งจั้ว|เชิญนั่ง
+没问题|méi wèntí|เหมยเวิ่นถี|ไม่มีปัญหา
+没事|méi shì|เหมยซื่อ|ไม่เป็นไร / ไม่มีอะไร
+当然|dāngrán|ตางหราน|แน่นอน
+可能|kěnéng|เข่อเหนิง|อาจจะ
+真的|zhēn de|เจินเตอ|จริงหรือ / จริง ๆ
+一起|yìqǐ|อี้ฉี่|ด้วยกัน
+已经|yǐjīng|อี่จิง|เรียบร้อยแล้ว
+还|hái|ไห|ยัง / อีก
+再|zài|ไจ้|อีกครั้ง / ค่อย
+别|bié|เปี๋ย|อย่า
+#คำถามที่ใช้จริง
+你叫什么名字？|nǐ jiào shénme míngzi|หนี่เจี้ยวเสินเมอหมิงจึ|คุณชื่ออะไร
+你好吗？|nǐ hǎo ma|หนี่ห่าวมะ|คุณสบายดีไหม
+你会说中文吗？|nǐ huì shuō Zhōngwén ma|หนี่ฮุ่ยซัวจงเหวินมะ|คุณพูดภาษาจีนได้ไหม
+洗手间在哪里？|xǐshǒujiān zài nǎlǐ|สี่โส่วเจียนไจ้หน่าหลี่|ห้องน้ำอยู่ที่ไหน
+我听不懂。|wǒ tīng bù dǒng|หว่อทิงปู้ต่ง|ฉันฟังไม่เข้าใจ
+请说慢一点。|qǐng shuō màn yìdiǎn|ฉิ่งซัวม่านอี้เตี่ยน|กรุณาพูดช้าลงหน่อย
+可以帮我吗？|kěyǐ bāng wǒ ma|เข่ออี่ปางหว่อมะ|ช่วยฉันได้ไหม
+#คำพื้นฐานที่ขาดสำหรับแต่งประโยค
+叫|jiào|เจี้ยว|ชื่อว่า / เรียกว่า
+中文|Zhōngwén|จงเหวิน|ภาษาจีน
+会|huì|ฮุ่ย|สามารถ / เป็น (ทักษะ)
+能|néng|เหนิง|สามารถ
+可以|kěyǐ|เข่ออี่|สามารถ / ได้
+吃饭|chīfàn|ชือฟั่น|กินข้าว
+吧|ba|ปะ|เถอะ / นะ (คำลงท้าย)
+一点|yìdiǎn|อี้เตี่ยน|นิดหน่อย
+这儿|zhèr|เจอร์|ที่นี่
+那儿|nàr|นาร์|ที่นั่น
+里面|lǐmiàn|หลี่เมี่ยน|ข้างใน
+外面|wàimiàn|ไว่เมี่ยน|ข้างนอก
+上|shàng|ช่าง|บน / ขึ้น
+下|xià|เซี่ย|ล่าง / ลง
+前面|qiánmiàn|เฉียนเมี่ยน|ข้างหน้า
+后面|hòumiàn|โห้วเมี่ยน|ข้างหลัง
+旁边|pángbiān|ผางเปียน|ข้าง ๆ
+从|cóng|ฉง|จาก
+到|dào|เต้า|ถึง / ไปยัง
+跟|gēn|เกิน|กับ`;
+const $=s=>document.querySelector(s);
+const words=[],cats=[];
+RAW.split('\n').forEach(l=>{if(l[0]==='#'){cats.push(l.slice(1));return}const[h,p,t,m]=l.split('|');words.push({h,p,t,m,c:cats[cats.length-1]})});
+let cat='ทั้งหมด',mode='learn',cur=null,hist=[],hide=false,shown=false,slow=false,score=0,total=0,streak=0,answered=false,qt=0;
+const pool=()=>words.filter(w=>cat==='ทั้งหมด'||w.c===cat);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+let voice=null;
+function pickVoice(){if(!('speechSynthesis' in window))return;const v=speechSynthesis.getVoices();voice=v.find(x=>/zh[-_]CN/i.test(x.lang))||v.find(x=>/^zh/i.test(x.lang))||null}
+if('speechSynthesis' in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice}
+function speak(t){if(!('speechSynthesis' in window))return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';if(voice)u.voice=voice;u.rate=slow?.55:.85;speechSynthesis.speak(u)}catch(e){}}
+function renderChips(){
+  const all=['ทั้งหมด'].concat(cats);
+  $('#chips').innerHTML=all.map(c=>`<button class="${c===cat?'on':''}" data-c="${c}">${c}</button>`).join('');
+  $('#chips').querySelectorAll('button').forEach(b=>b.onclick=()=>{cat=b.dataset.c;hist=[];renderChips();start()});
+  $('#count').textContent=pool().length+' คำ';
+}
+function renderList(){
+  const cs=cat==='ทั้งหมด'?cats:[cat];
+  $('#stage').innerHTML='<input id="q" type="search" placeholder="ค้นหา ตัวจีน พินอิน หรือคำไทย"><div id="lst"></div>';
+  const draw=()=>{const k=$('#q').value.trim().toLowerCase();
+    $('#lst').innerHTML=cs.map(c=>{const ws=words.filter(w=>w.c===c&&(!k||(w.h+w.p+w.t+w.m).toLowerCase().includes(k)));
+      return ws.length?`<h2>${c}<span>${ws.length} คำ</span></h2>`+ws.map(w=>`<div class="it" data-h="${w.h}"><b class="zh">${w.h}</b><div><div class="p">${w.p}</div><div class="t">${w.t} – ${w.m}</div></div><button aria-label="ฟังเสียง">▶</button></div>`).join(''):''}).join('')||'<p class="note">ไม่พบคำที่ค้นหา</p>';
+    $('#lst').querySelectorAll('.it').forEach(e=>e.onclick=()=>speak(e.dataset.h))};
+  $('#q').oninput=draw;draw();
+}
+function start(){$('#count').textContent=pool().length+' คำ';mode==='learn'?nextWord(false):mode==='quiz'?newQ():mode==='sentence'?newSentence():renderList()}
+function nextWord(say=true){
+  const p=pool();let w;do{w=p[Math.random()*p.length|0]}while(p.length>1&&cur&&w===cur);
+  if(cur)hist.push(cur);cur=w;shown=false;renderLearn();if(say)speak(cur.h)
+}
+function renderLearn(){
+  const w=cur;
+  $('#stage').innerHTML=`
+  <label class="opt"><input type="checkbox" id="hide" ${hide?'checked':''}> ทายก่อน แล้วค่อยแตะดูคำตอบ</label>
+  <div class="card ${hide&&!shown?'veil':''}" id="card" tabindex="0">
+    <div class="hz ${w.h.length>3?'sm':''}">${w.h}</div>
+    <div class="ans"><div class="py">${w.p}</div><div class="th">อ่านว่า ${w.t}</div><div class="mn">${w.m}</div></div>
+    <button class="say" id="say">▶ ฟังเสียง</button>
+  </div>
+  <div class="row"><button id="prev" ${hist.length?'':'disabled'}>ย้อนกลับ</button><button id="slow" class="${slow?'on':''}">เสียงช้า</button><button class="main" id="rnd">สุ่มคำ</button></div>`;
+  $('#hide').onchange=e=>{hide=e.target.checked;shown=false;renderLearn()};
+  $('#card').onclick=e=>{if(e.target.id==='say')return;if(hide&&!shown){shown=true;$('#card').classList.remove('veil')}};
+  $('#say').onclick=()=>speak(w.h);
+  $('#slow').onclick=()=>{slow=!slow;$('#slow').classList.toggle('on',slow);speak(w.h)};
+  $('#prev').onclick=()=>{if(hist.length){cur=hist.pop();shown=false;renderLearn();speak(cur.h)}};
+  $('#rnd').onclick=()=>nextWord(true);
+}
+function newQ(){
+  const p=pool();cur=p[Math.random()*p.length|0];qt=Math.random()*3|0;answered=false;
+  const seen=new Set([cur.m,cur.h]);const opts=[cur];
+  for(const w of shuffle(words.filter(w=>w.c===cur.c)).concat(shuffle(words))){
+    if(opts.length>=4)break;if(seen.has(w.m)||seen.has(w.h))continue;seen.add(w.m);seen.add(w.h);opts.push(w)
+  }
+  renderQ(shuffle(opts));
+  if(qt===1)speak(cur.h)
+}
+function renderQ(opts){
+  const zh=qt===2;
+  let prompt;
+  if(qt===0)prompt=`<div class="q">คำนี้แปลว่าอะไร</div><div class="hz ${cur.h.length>3?'sm':''}">${cur.h}</div>`;
+  else if(qt===1)prompt=`<div class="q">ฟังเสียง แล้วเลือกความหมาย</div><button class="say" id="say" style="font-size:20px;padding:16px 28px">▶ เล่นเสียง</button>`;
+  else prompt=`<div class="q">เลือกคำภาษาจีนที่ตรงกับความหมายนี้</div><div class="mn" style="font-size:28px;margin:0">${cur.m}</div>`;
+  $('#stage').innerHTML=`
+  <div class="score"><span>ถูก <b>${score}</b> จาก <b>${total}</b> ข้อ</span><span>ถูกติดต่อกัน <b>${streak}</b></span></div>
+  <div class="card" style="min-height:220px">${prompt}<div class="fb" id="fb"></div></div>
+  <div class="choices" id="ch">${opts.map((o,i)=>`<button class="${zh?'zh':''}" data-i="${i}">${zh?o.h:o.m}</button>`).join('')}</div>
+  <button class="next" id="nx" style="display:none">ข้อต่อไป</button>`;
+  const sb=$('#say');if(sb)sb.onclick=()=>speak(cur.h);
+  $('#ch').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    if(answered)return;answered=true;total++;
+    const ok=opts[+b.dataset.i]===cur;
+    if(ok){score++;streak++}else streak=0;
+    $('#ch').querySelectorAll('button').forEach(x=>{x.disabled=true;if(opts[+x.dataset.i]===cur)x.classList.add('ok')});
+    if(!ok)b.classList.add('bad');
+    $('#fb').innerHTML=`<div class="hz sm" style="font-size:44px">${cur.h}</div><div class="py">${cur.p}</div><div>อ่านว่า ${cur.t} หมายถึง ${cur.m}</div><div style="margin-top:6px;font-weight:600;color:var(${ok?'--jade':'--seal'})">${ok?'ถูกต้อง':'ยังไม่ถูก คำตอบคือคำที่ไฮไลต์สีเขียว'}</div>`;
+    $('#nx').style.display='block';speak(cur.h);
+    document.querySelector('.score').innerHTML=`<span>ถูก <b>${score}</b> จาก <b>${total}</b> ข้อ</span><span>ถูกติดต่อกัน <b>${streak}</b></span>`;
+  });
+  $('#nx').onclick=newQ;
+}
+
+const SENTENCES=[
+ {zh:'我是学生。',py:'wǒ shì xuésheng',th:'ฉันเป็นนักเรียน',parts:['我','是','学生','。']},
+ {zh:'你叫什么名字？',py:'nǐ jiào shénme míngzi',th:'คุณชื่ออะไร',parts:['你','叫','什么','名字','？']},
+ {zh:'我喜欢喝茶。',py:'wǒ xǐhuan hē chá',th:'ฉันชอบดื่มชา',parts:['我','喜欢','喝','茶','。']},
+ {zh:'他今天去学校。',py:'tā jīntiān qù xuéxiào',th:'วันนี้เขาไปโรงเรียน',parts:['他','今天','去','学校','。']},
+ {zh:'我想买一杯咖啡。',py:'wǒ xiǎng mǎi yì bēi kāfēi',th:'ฉันอยากซื้อกาแฟหนึ่งแก้ว',parts:['我','想','买','一','杯','咖啡','。']},
+ {zh:'请问，厕所在哪里？',py:'qǐngwèn, cèsuǒ zài nǎlǐ',th:'ขอถามหน่อย ห้องน้ำอยู่ที่ไหน',parts:['请问','，','厕所','在','哪里','？']},
+ {zh:'这个多少钱？',py:'zhège duōshao qián',th:'อันนี้ราคาเท่าไร',parts:['这个','多少','钱','？']},
+ {zh:'我听不懂中文。',py:'wǒ tīng bù dǒng Zhōngwén',th:'ฉันฟังภาษาจีนไม่เข้าใจ',parts:['我','听','不','懂','中文','。']},
+ {zh:'明天我们去公园。',py:'míngtiān wǒmen qù gōngyuán',th:'พรุ่งนี้พวกเราไปสวนสาธารณะ',parts:['明天','我们','去','公园','。']},
+ {zh:'你会说中文吗？',py:'nǐ huì shuō Zhōngwén ma',th:'คุณพูดภาษาจีนได้ไหม',parts:['你','会','说','中文','吗','？']},
+ {zh:'我没有钱。',py:'wǒ méiyǒu qián',th:'ฉันไม่มีเงิน',parts:['我','没有','钱','。']},
+ {zh:'今天天气很好。',py:'jīntiān tiānqì hěn hǎo',th:'วันนี้อากาศดีมาก',parts:['今天','天气','很','好','。']},
+ {zh:'请给我一杯水。',py:'qǐng gěi wǒ yì bēi shuǐ',th:'กรุณาให้น้ำฉันหนึ่งแก้ว',parts:['请','给','我','一','杯','水','。']},
+ {zh:'我们一起吃饭吧。',py:'wǒmen yìqǐ chīfàn ba',th:'พวกเรากินข้าวด้วยกันเถอะ',parts:['我们','一起','吃饭','吧','。']},
+ {zh:'这个太贵了。',py:'zhège tài guì le',th:'อันนี้แพงเกินไป',parts:['这个','太','贵','了','。']}
+];
+let sentenceCur=null,sentenceBuilt=[],sentenceLocked=false,sentenceScore=0,sentenceTotal=0;
+function newSentence(){
+ sentenceCur=SENTENCES[Math.random()*SENTENCES.length|0];
+ sentenceBuilt=[];sentenceLocked=false;
+ const tokens=shuffle(sentenceCur.parts.map((v,i)=>({v,id:i})));
+ $('#stage').innerHTML=`<div class="score"><span>ตอบถูก <b>${sentenceScore}</b> / <b>${sentenceTotal}</b></span><span>ฝึกเรียงคำให้เป็นประโยค</span></div>
+ <div class="card" style="min-height:190px"><div class="q">เรียงคำภาษาจีนให้ถูกต้อง</div><div class="mn" style="font-size:20px">${sentenceCur.th}</div><div class="py" style="font-size:17px">${sentenceCur.py}</div></div>
+ <p class="q" style="margin-top:14px">แตะคำด้านล่างตามลำดับประโยค</p>
+ <div id="built" class="choices" style="display:flex;flex-wrap:wrap;gap:8px;min-height:54px"></div>
+ <div id="tokens" class="choices" style="display:flex;flex-wrap:wrap;gap:8px"></div>
+ <div class="row"><button id="undo">ย้อนคำ</button><button id="clear">เริ่มใหม่</button></div>
+ <button class="next" id="check">ตรวจคำตอบ</button><div id="sfb" class="fb"></div>`;
+ const draw=()=>{
+  $('#built').innerHTML=sentenceBuilt.map(t=>`<button data-id="${t.id}">${t.v}</button>`).join('');
+  $('#tokens').innerHTML=tokens.filter(t=>!sentenceBuilt.some(x=>x.id===t.id)).map(t=>`<button data-id="${t.id}">${t.v}</button>`).join('');
+  $('#tokens').querySelectorAll('button').forEach(b=>b.onclick=()=>{if(!sentenceLocked){sentenceBuilt.push(tokens.find(t=>t.id===+b.dataset.id));draw()}});
+  $('#built').querySelectorAll('button').forEach(b=>b.onclick=()=>{if(!sentenceLocked){sentenceBuilt=sentenceBuilt.filter(t=>t.id!==+b.dataset.id);draw()}});
+ };
+ draw();
+ $('#undo').onclick=()=>{if(!sentenceLocked){sentenceBuilt.pop();draw()}};
+ $('#clear').onclick=()=>{if(!sentenceLocked){sentenceBuilt=[];draw();$('#sfb').textContent=''}};
+ $('#check').onclick=()=>{
+  if(sentenceLocked)return;
+  if(sentenceBuilt.length!==sentenceCur.parts.length){$('#sfb').textContent='ยังเรียงไม่ครบ ลองตรวจดูอีกครั้ง';return}
+  sentenceLocked=true;sentenceTotal++;
+  const ok=sentenceBuilt.map(t=>t.v).join('')===sentenceCur.parts.join('');
+  if(ok)sentenceScore++;
+  $('#sfb').innerHTML=`<b style="color:var(${ok?'--jade':'--seal'})">${ok?'ถูกต้อง เก่งมาก!':'ยังไม่ถูก ลองดูประโยคที่ถูกต้อง'}</b><div class="hz sm" style="font-size:32px;margin-top:8px">${sentenceCur.zh}</div><div class="py">${sentenceCur.py}</div><div>${sentenceCur.th}</div>`;
+  $('.score').innerHTML=`<span>ตอบถูก <b>${sentenceScore}</b> / <b>${sentenceTotal}</b></span><span>ฝึกเรียงคำให้เป็นประโยค</span>`;
+  $('#check').textContent='ประโยคถัดไป';$('#check').onclick=newSentence;
+ };
+}
+function setMode(m){mode=m;$('#tLearn').classList.toggle('on',m==='learn');$('#tQuiz').classList.toggle('on',m==='quiz');$('#tList').classList.toggle('on',m==='list');$('#tSentence').classList.toggle('on',m==='sentence');$('#chips').style.display=m==='sentence'?'none':'flex';hist=[];start()}
+
+$('#tList').onclick=()=>setMode('list');
+$('#tLearn').onclick=()=>setMode('learn');
+$('#tQuiz').onclick=()=>setMode('quiz');
+$('#tSentence').onclick=()=>setMode('sentence');
+renderChips();start();
+</script>
+</body>
+</html>
