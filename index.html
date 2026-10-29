@@ -17,8 +17,8 @@ body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 "Noto Sans
 header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px}
 h1{font:700 22px/1.2 "Noto Serif SC","Noto Sans Thai",serif;margin:0}
 h1 small{font:400 13px "Noto Sans Thai",sans-serif;color:var(--mute);margin-left:8px}
-.tabs{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:12px}
-.tabs button{border:0;background:none;color:var(--mute);padding:10px 2px;border-radius:9px;font:600 14px "Noto Sans Thai",sans-serif;cursor:pointer}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:12px}
+.tabs button{border:0;background:none;color:var(--mute);padding:10px 0;border-radius:9px;font:600 13px "Noto Sans Thai",sans-serif;cursor:pointer}
 .tabs button.on{background:var(--jade);color:var(--on)}
 .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:8px;-webkit-overflow-scrolling:touch}
 .chips button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;font:400 14px "Noto Sans Thai",sans-serif;cursor:pointer}
@@ -75,6 +75,42 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--jade);outline-o
 .slots .tile{border-color:var(--jade);background:var(--jade-t)}
 .tile.bad{border-color:var(--seal)!important;background:var(--seal-t)!important}
 .tile:disabled{cursor:default}
+#lbar{margin-bottom:10px}
+.lhead{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.lhead button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 12px;font:600 14px "Noto Sans Thai",sans-serif;cursor:pointer;flex:none}
+.ltitle{font-weight:700;line-height:1.25}
+.lsub{font-size:13px;color:var(--mute)}
+.lsteps{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px}
+.lsteps button{border:1px solid var(--line);background:var(--card);color:var(--mute);border-radius:10px;padding:9px 4px;font:600 13px "Noto Sans Thai",sans-serif;cursor:pointer}
+.lsteps button.on{background:var(--jade);border-color:var(--jade);color:var(--on)}
+.ovw{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:10px}
+.ovt{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.ovt span{color:var(--mute);font-size:13px}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden;flex:1}
+.bar i{display:block;height:100%;background:var(--jade);border-radius:99px}
+.rvbtn{width:100%;border:1px dashed var(--jade);background:var(--jade-t);color:var(--jade);border-radius:12px;padding:12px;font:600 15px "Noto Sans Thai",sans-serif;cursor:pointer;margin-bottom:4px}
+.rvbtn:disabled{opacity:.5;cursor:default}
+.lvh{font:700 17px "Noto Sans Thai",sans-serif;margin:20px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--jade)}
+.lvh span{display:block;font-weight:400;font-size:13px;color:var(--mute)}
+.lrow{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:6px;cursor:pointer;font-family:inherit}
+.lrow.next{border-color:var(--jade);box-shadow:0 0 0 2px var(--jade-t)}
+.lrow .no{flex:none;width:34px;height:34px;border-radius:50%;background:var(--jade-t);color:var(--jade);display:grid;place-items:center;font-weight:700}
+.lrow.pass .no{background:var(--jade);color:var(--on)}
+.lrow .lt{flex:1;min-width:0}
+.lrow .lt b{display:block;line-height:1.3}
+.lrow .lt small{color:var(--mute);font-size:13px}
+.lrow .st{flex:none;font-size:12px;font-weight:600;color:var(--mute);text-align:right}
+.lrow .st.ok{color:var(--jade)}
+.stp{display:flex;align-items:center;gap:10px;margin:2px 0 10px;font-size:14px;color:var(--mute)}
+.lnk{border:0;background:none;color:var(--jade);font:600 14px "Noto Sans Thai",sans-serif;cursor:pointer;text-decoration:underline;padding:4px}
+.exs{margin-top:14px;padding:10px 14px;border-radius:12px;background:var(--jade-t);font-size:15px;max-width:100%}
+.exs .zh{font:700 20px/1.4 "Noto Serif SC","Songti SC",serif}
+.exs small{display:block;color:var(--jade);font-weight:600}
+.rw{font:700 16px "Noto Sans Thai",sans-serif;margin:18px 0 6px}
+.rwi{display:flex;gap:10px;align-items:baseline;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:8px 12px;margin-bottom:6px}
+.rwi .zh{font:700 22px "Noto Serif SC",serif}
+.rwi .py{font-size:15px;margin:0}
+.row.wrap{flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){.ans{transition:none}}
 </style>
 </head>
@@ -82,12 +118,14 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--jade);outline-o
 <div class="wrap">
   <header><h1>จีนทุกวัน<small>汉语日常词</small></h1><span id="count" style="color:var(--mute);font-size:14px"></span></header>
   <div class="tabs" role="tablist">
-    <button id="tLearn" class="on" role="tab" aria-selected="true">ฝึกจำคำ</button>
+    <button id="tLesson" class="on" role="tab" aria-selected="true">บทเรียน</button>
+    <button id="tLearn" role="tab" aria-selected="false">ฝึกจำคำ</button>
     <button id="tQuiz" role="tab" aria-selected="false">ทดสอบ</button>
     <button id="tSent" role="tab" aria-selected="false">แต่งประโยค</button>
     <button id="tList" role="tab" aria-selected="false">รายการคำ</button>
   </div>
   <div class="chips" id="chips"></div>
+  <div id="lbar" style="display:none"></div>
   <div id="stage"></div>
   <p class="note">เสียงอ่านใช้เสียงภาษาจีนของเครื่อง หากไม่มีเสียง ให้เพิ่มภาษาจีน (Mandarin) ในการตั้งค่าเสียงของอุปกรณ์<br>คำอ่านไทยเป็นการประมาณเสียง ให้ยึดพินอินเป็นหลัก · 不 และ 一 เปลี่ยนเสียงตามคำที่ตามมา เช่น 不是 อ่านว่า bú shì, 一个 อ่านว่า yí ge</p>
 </div>
@@ -971,8 +1009,127 @@ const RAW=`#ทักทาย
 老鼠|lǎoshǔ|เหล่าสู่|หนู
 蛇|shé|เสอ|งู
 蚊子|wénzi|เหวินจึ|ยุง
-龙|lóng|หลง|มังกร`;
-const SRAW=`#ประโยคพื้นฐาน
+龙|lóng|หลง|มังกร
+#ความคิดเห็นและเหตุผล
+意见|yìjiàn|อี้เจี้ยน|ความคิดเห็น
+办法|bànfǎ|ป้านฝ่า|วิธีการ
+问题|wèntí|เวิ่นถี|ปัญหา / คำถาม
+原因|yuányīn|เหยวียนอิน|สาเหตุ
+结果|jiéguǒ|เจี๋ยกั่ว|ผลลัพธ์
+其实|qíshí|ฉีสือ|ที่จริงแล้ว
+虽然|suīrán|ซุยหราน|แม้ว่า
+可是|kěshì|เข่อซื่อ|แต่ (ภาษาพูด)
+而且|érqiě|เอ๋อร์เฉี่ย|อีกทั้ง
+除了|chúle|ฉูเลอ|นอกจาก
+关于|guānyú|กวนหยวี๋|เกี่ยวกับ
+为了|wèile|เว่ยเลอ|เพื่อ
+只要|zhǐyào|จื่อเย่า|ขอเพียง
+一定|yídìng|อี๋ติ้ง|แน่นอน / ต้อง
+必须|bìxū|ปี้ซวี|ต้อง (จำเป็น)
+突然|tūrán|ทูหราน|ทันใดนั้น
+终于|zhōngyú|จงหยวี๋|ในที่สุด
+比较|bǐjiào|ปี่เจี้ยว|ค่อนข้าง
+特别|tèbié|เท่อเปี๋ย|เป็นพิเศษ
+差不多|chàbuduō|ชาปู้ตัว|เกือบเท่ากัน / ประมาณ
+大概|dàgài|ต้ากาย|ประมาณ / คงจะ
+同意|tóngyì|ถงอี้|เห็นด้วย
+参加|cānjiā|ชานเจีย|เข้าร่วม
+决定|juédìng|เจวี๋ยติ้ง|ตัดสินใจ
+选择|xuǎnzé|เสวี่ยนเจ๋อ|เลือก
+改变|gǎibiàn|ก่ายเปี้ยน|เปลี่ยนแปลง
+愿意|yuànyì|เยวี่ยนอี้|เต็มใจ
+打算|dǎsuàn|ต่าซ่วน|วางแผนว่าจะ
+注意|zhùyì|จู้อี้|ใส่ใจ / ระวัง
+以为|yǐwéi|อี่เหวย|นึกว่า
+#การงานและธุรกิจ
+会议|huìyì|ฮุ่ยอี้|การประชุม
+经理|jīnglǐ|จิงหลี่|ผู้จัดการ
+合同|hétong|เหอถง|สัญญา
+工资|gōngzī|กงจือ|เงินเดือน
+面试|miànshì|เมี่ยนซื่อ|สัมภาษณ์งาน
+简历|jiǎnlì|เจี่ยนลี่|ประวัติย่อ (เรซูเม่)
+项目|xiàngmù|เซี่ยงมู่|โครงการ
+计划|jìhuà|จี้ฮว่า|แผน
+客户|kèhù|เค่อฮู่|ลูกค้า
+生意|shēngyi|เซิงอี้|ธุรกิจ / การค้า
+报价|bàojià|เป้าเจี้ย|เสนอราคา
+出差|chūchāi|ชูฉาย|เดินทางไปทำงานต่างพื้นที่
+加班|jiābān|เจียปาน|ทำงานล่วงเวลา
+请假|qǐngjià|ฉิ่งเจี้ย|ลางาน
+邮件|yóujiàn|โหยวเจี้ยน|อีเมล
+文件|wénjiàn|เหวินเจี้ยน|เอกสาร / ไฟล์
+申请|shēnqǐng|เซินฉิ่ง|สมัคร / ยื่นขอ
+负责|fùzé|ฟู่เจ๋อ|รับผิดชอบ
+合作|hézuò|เหอจั้ว|ร่วมมือ
+经验|jīngyàn|จิงเยี่ยน|ประสบการณ์
+讨论|tǎolùn|เถ่าลุ่น|อภิปราย / หารือ
+安排|ānpái|อานผาย|จัดการ / จัดตาราง
+通知|tōngzhī|ทงจือ|แจ้ง / ประกาศ
+#การเรียนและภาษา
+考试|kǎoshì|เข่าซื่อ|สอบ
+成绩|chéngjì|เฉิงจี้|ผลการเรียน / คะแนน
+作业|zuòyè|จั้วเย่|การบ้าน
+练习|liànxí|เลี่ยนสี๋|ฝึกฝน
+复习|fùxí|ฟู่สี๋|ทบทวน
+生词|shēngcí|เซิงฉือ|คำศัพท์ใหม่
+句子|jùzi|จู้จึ|ประโยค
+语法|yǔfǎ|หยวี่ฝ่า|ไวยากรณ์
+发音|fāyīn|ฟาอิน|การออกเสียง
+声调|shēngdiào|เซิงเตี้ยว|วรรณยุกต์
+汉字|Hànzì|ฮั่นจื้อ|อักษรจีน
+意思|yìsi|อี้ซือ|ความหมาย
+词典|cídiǎn|ฉือเตี่ยน|พจนานุกรม
+课|kè|เค่อ|บทเรียน / วิชา
+准备|zhǔnbèi|จุ่นเป้ย|เตรียม
+提高|tígāo|ถีเกา|ยกระดับ / พัฒนา
+进步|jìnbù|จิ้นปู้|ก้าวหน้า
+努力|nǔlì|หนู่ลี่|พยายาม
+解释|jiěshì|เจี่ยซื่อ|อธิบาย
+了解|liǎojiě|เหลี่ยวเจี่ย|เข้าใจ / ทำความรู้จัก
+#สังคมและวัฒนธรรม
+文化|wénhuà|เหวินฮว่า|วัฒนธรรม
+历史|lìshǐ|ลี่สื่อ|ประวัติศาสตร์
+环境|huánjìng|หวนจิ้ง|สิ่งแวดล้อม
+健康|jiànkāng|เจี้ยนคัง|สุขภาพ / แข็งแรง
+安全|ānquán|อานเฉวียน|ปลอดภัย
+社会|shèhuì|เซ่อฮุ่ย|สังคม
+经济|jīngjì|จิงจี้|เศรษฐกิจ
+关系|guānxi|กวนซี|ความสัมพันธ์
+机会|jīhuì|จีฮุ่ย|โอกาส
+习惯|xíguàn|สี๋กว้าน|นิสัย / คุ้นเคย
+生活|shēnghuó|เซิงฮั่ว|ชีวิต / ใช้ชีวิต
+发展|fāzhǎn|ฟาจ่าน|พัฒนา
+影响|yǐngxiǎng|อิ่งเสี่ยง|อิทธิพล / ส่งผลกระทบ
+传统|chuántǒng|ฉวนถ่ง|ประเพณี
+节日|jiérì|เจี๋ยรื่อ|เทศกาล
+春节|Chūnjié|ชุนเจี๋ย|ตรุษจีน
+保护|bǎohù|เป่าฮู่|ปกป้อง
+污染|wūrǎn|อูหราน|มลพิษ
+空气|kōngqì|คงชี่|อากาศ (ที่หายใจ)
+重要|zhòngyào|จ้งเย่า|สำคัญ
+世界|shìjiè|ซื่อเจี้ย|โลก`;
+const SRAW=`#เริ่มต้นง่าย ๆ
+นี่คืออะไร|这:zhè 是:shì 什么:shénme
+คุณเป็นใคร|你:nǐ 是:shì 谁:shéi
+นี่ไม่ใช่ของฉัน|这:zhè 不:bú 是:shì 我:wǒ 的:de
+ฉันไม่มีอันนี้|我:wǒ 没有:méiyǒu 这个:zhège
+คุณมีกี่อัน|你:nǐ 有:yǒu 几:jǐ 个:gè
+ฉันมีสามอัน|我:wǒ 有:yǒu 三:sān 个:gè
+คุณดื่มชาไหม|你:nǐ 喝:hē 茶:chá 吗:ma
+ฉันกินปลา|我:wǒ 吃:chī 鱼:yú
+เขาไม่กินเนื้อ|他:tā 不:bù 吃:chī 肉:ròu
+ฉันดื่มกาแฟ|我:wǒ 喝:hē 咖啡:kāfēi
+วันนี้วันจันทร์|今天:jīntiān 是:shì 星期一:xīngqīyī
+พรุ่งนี้วันศุกร์|明天:míngtiān 是:shì 星期五:xīngqīwǔ
+คุณอยากไปไหม|你:nǐ 想:xiǎng 去:qù 吗:ma
+ฉันรักคุณ|我:wǒ 爱:ài 你:nǐ
+ฉันอยากนอน|我:wǒ 想:xiǎng 睡觉:shuìjiào
+คุณรู้ไหม|你:nǐ 知道:zhīdào 吗:ma
+ฉันรู้จักเขา|我:wǒ 认识:rènshi 他:tā
+คุณเข้าใจไหม|你:nǐ 懂:dǒng 吗:ma
+อันนี้ราคาเท่าไร|这个:zhège 多少:duōshao 钱:qián
+อันนี้ถูกมาก|这个:zhège 很:hěn 便宜:piányi
+#ประโยคพื้นฐาน
 ฉันเป็นคนไทย|我:wǒ 是:shì 泰国人:Tàiguórén
 เขาไม่ใช่ครู|他:tā 不:bú 是:shì 老师:lǎoshī
 ฉันชอบดื่มชา|我:wǒ 喜欢:xǐhuan 喝:hē 茶:chá
@@ -1053,7 +1210,7 @@ const SRAW=`#ประโยคพื้นฐาน
 ฉันแพ้ถั่วลิสง|我:wǒ 对:duì 花生:huāshēng 过敏:guòmǐn
 ฉันต้องไปโรงพยาบาล|我:wǒ 需要:xūyào 去:qù 医院:yīyuàn
 กรุณาเรียกรถพยาบาล|请:qǐng 叫:jiào 救护车:jiùhùchē
-หนังสือเดินทางของฉันหาย|我:wǒ 的:de 护照:hùzhào 丢:diū 了:le
+หนังสือเดินทางของฉันหาย|我:wǒ 的:de 护照:hùzhào 丢了:diū_le
 ช่วยฉันด้วย|请:qǐng 帮:bāng 我:wǒ
 ที่นี่มีร้านขายยาไหม|这里:zhèlǐ 有:yǒu 药店:yàodiàn 吗:ma
 ฉันท้องเสีย|我:wǒ 拉肚子:lā_dùzi 了:le
@@ -1078,7 +1235,140 @@ const SRAW=`#ประโยคพื้นฐาน
 ฉันกินแล้ว|我:wǒ 已经:yǐjīng 吃:chī 了:le
 อย่าลืมหนังสือเดินทาง|别:bié 忘:wàng 了:le 护照:hùzhào
 ฉันให้หนังสือเล่มนี้แก่เขา|我:wǒ 给:gěi 他:tā 这:zhè 本:běn 书:shū
-ฉันไปกับเพื่อน|我:wǒ 和:hé 朋友:péngyou 一起:yìqǐ 去:qù`;
+ฉันไปกับเพื่อน|我:wǒ 和:hé 朋友:péngyou 一起:yìqǐ 去:qù
+#สี สัตว์ ร่างกาย และเสื้อผ้า
+อันนี้หวานมาก|这个:zhège 很:hěn 甜:tián
+อันนี้เค็มเกินไป|这个:zhège 太:tài 咸:xián 了:le
+ฉันชอบสีแดง|我:wǒ 喜欢:xǐhuan 红色:hóngsè
+นี่เป็นสีดำ|这:zhè 是:shì 黑色:hēisè 的:de
+ฉันมีแมวหนึ่งตัว|我:wǒ 有:yǒu 一:yì 只:zhī 猫:māo
+นี่คือแพนด้า|这:zhè 是:shì 熊猫:xióngmāo
+เขามีสุนัขสองตัว|他:tā 有:yǒu 两:liǎng 只:zhī 狗:gǒu
+ฉันเหนื่อยมาก|我:wǒ 很:hěn 累:lèi
+เธอมีความสุขมาก|她:tā 很:hěn 开心:kāixīn
+ฉันง่วงแล้ว|我:wǒ 困:kùn 了:le
+ตาของเขาสวยมาก|他:tā 的:de 眼睛:yǎnjing 很:hěn 漂亮:piàoliang
+ฉันซื้อกางเกงหนึ่งตัว|我:wǒ 买:mǎi 一:yì 条:tiáo 裤子:kùzi
+ฉันชอบเสื้อเชิ้ตตัวนี้|我:wǒ 喜欢:xǐhuan 这:zhè 件:jiàn 衬衫:chènshān
+หมวกของฉันอยู่ที่ไหน|我:wǒ 的:de 帽子:màozi 在:zài 哪里:nǎlǐ
+ขอถุงหนึ่งใบ|请:qǐng 给:gěi 我:wǒ 一:yí 个:gè 袋子:dàizi
+#ขั้นสูง
+ฉันเห็นด้วยกับความเห็นของคุณ|我:wǒ 同意:tóngyì 你:nǐ 的:de 意见:yìjiàn
+ฉันไม่เห็นด้วย|我:wǒ 不:bù 同意:tóngyì
+แม้ฝนตก แต่ฉันก็ไป|虽然:suīrán 下雨:xiàyǔ 可是:kěshì 我:wǒ 也:yě 去:qù
+นอกจากกาแฟ ฉันยังชอบชา|除了:chúle 咖啡:kāfēi 我:wǒ 还:hái 喜欢:xǐhuan 茶:chá
+ในที่สุดฉันก็ตัดสินใจแล้ว|我:wǒ 终于:zhōngyú 决定:juédìng 了:le
+ฉันยังไม่ได้ตัดสินใจ|我:wǒ 还:hái 没:méi 决定:juédìng
+นี่เป็นปัญหาที่ใหญ่มาก|这:zhè 是:shì 一:yí 个:ge 很:hěn 大:dà 的:de 问题:wèntí
+ฉันคิดว่าวิธีนี้ค่อนข้างดี|我:wǒ 觉得:juéde 这个:zhège 办法:bànfǎ 比较:bǐjiào 好:hǎo
+ทันใดนั้นฝนก็ตก|突然:tūrán 下雨:xiàyǔ 了:le
+ฉันเลือกอันนี้|我:wǒ 选择:xuǎnzé 这个:zhège
+เพื่อสุขภาพ ฉันออกกำลังกายทุกวัน|为了:wèile 健康:jiànkāng 我:wǒ 每天:měitiān 运动:yùndòng
+ถ้าคุณไม่มีเวลา เราจะเปลี่ยนแผน|如果:rúguǒ 你:nǐ 没有:méiyǒu 时间:shíjiān 我们:wǒmen 就:jiù 改变:gǎibiàn 计划:jìhuà
+ฉันวางแผนว่าปีหน้าจะไปเที่ยวจีน|我:wǒ 打算:dǎsuàn 明年:míngnián 去:qù 中国:Zhōngguó 旅游:lǚyóu|我 明年 打算 去 中国 旅游
+ฉันเต็มใจช่วยคุณ|我:wǒ 愿意:yuànyì 帮:bāng 你:nǐ
+กรุณาระวังความปลอดภัย|请:qǐng 注意:zhùyì 安全:ānquán
+ฉันนึกว่าเขาเป็นคนจีน|我:wǒ 以为:yǐwéi 他:tā 是:shì 中国人:Zhōngguórén
+พรุ่งนี้ฉันต้องเข้าร่วมประชุม|我:wǒ 明天:míngtiān 必须:bìxū 参加:cānjiā 会议:huìyì|明天 我 必须 参加 会议
+ผู้จัดการไม่อยู่ที่บริษัท|经理:jīnglǐ 不:bú 在:zài 公司:gōngsī
+ฉันอยากสมัครงานนี้|我:wǒ 想:xiǎng 申请:shēnqǐng 这个:zhège 工作:gōngzuò
+ฉันทำงานล่วงเวลาทุกวัน|我:wǒ 每天:měitiān 都:dōu 加班:jiābān|每天 我 都 加班
+เขาขอลางานวันนี้|他:tā 今天:jīntiān 请假:qǐngjià|今天 他 请假
+ฉันมีเอกสารสองฉบับ|我:wǒ 有:yǒu 两:liǎng 份:fèn 文件:wénjiàn
+พรุ่งนี้ฉันมีสัมภาษณ์งาน|我:wǒ 明天:míngtiān 有:yǒu 面试:miànshì|明天 我 有 面试
+เงินเดือนของคุณเท่าไร|你:nǐ 的:de 工资:gōngzī 是:shì 多少:duōshao
+ลูกค้าอยากได้ใบเสนอราคาที่ถูกกว่านี้|客户:kèhù 想:xiǎng 要:yào 便宜:piányi 一点:yìdiǎn 的:de 报价:bàojià
+เราต้องหารือปัญหานี้|我们:wǒmen 需要:xūyào 讨论:tǎolùn 这个:zhège 问题:wèntí
+ฉันจะแจ้งคุณพรุ่งนี้|我:wǒ 明天:míngtiān 通知:tōngzhī 你:nǐ|明天 我 通知 你
+เขารับผิดชอบโครงการนี้|他:tā 负责:fùzé 这个:zhège 项目:xiàngmù
+ฉันมีประสบการณ์ทำงานสามปี|我:wǒ 有:yǒu 三:sān 年:nián 工作:gōngzuò 经验:jīngyàn
+ฉันมีสอบพรุ่งนี้|我:wǒ 明天:míngtiān 有:yǒu 考试:kǎoshì|明天 我 有 考试
+ฉันต้องทบทวนคำศัพท์ใหม่|我:wǒ 要:yào 复习:fùxí 生词:shēngcí
+ไวยากรณ์ภาษาจีนไม่ยาก|中文:Zhōngwén 语法:yǔfǎ 不:bù 难:nán
+ฉันฝึกการออกเสียงทุกวัน|我:wǒ 每天:měitiān 都:dōu 练习:liànxí 发音:fāyīn|每天 我 都 练习 发音
+คำศัพท์ใหม่นี้แปลว่าอะไร|这个:zhège 生词:shēngcí 是:shì 什么:shénme 意思:yìsi
+ครูอธิบายไวยากรณ์ให้เรา|老师:lǎoshī 给:gěi 我们:wǒmen 解释:jiěshì 语法:yǔfǎ
+ฉันกำลังพยายามพัฒนาภาษาจีนของฉัน|我:wǒ 正在:zhèngzài 努力:nǔlì 提高:tígāo 我:wǒ 的:de 中文:Zhōngwén
+ตรุษจีนเป็นเทศกาลประเพณีของจีน|春节:Chūnjié 是:shì 中国:Zhōngguó 的:de 传统:chuántǒng 节日:jiérì
+สุขภาพสำคัญมาก|健康:jiànkāng 很:hěn 重要:zhòngyào
+ครอบครัวสำคัญที่สุด|家人:jiārén 最:zuì 重要:zhòngyào
+ฉันอยากทำความรู้จักวัฒนธรรมจีน|我:wǒ 想:xiǎng 了解:liǎojiě 中国:Zhōngguó 文化:wénhuà
+นี่เป็นโอกาสที่ดี|这:zhè 是:shì 一:yí 个:ge 好:hǎo 机会:jīhuì
+คุณคุ้นเคยกับชีวิตที่นี่แล้วหรือยัง|你:nǐ 习惯:xíguàn 这里:zhèlǐ 的:de 生活:shēnghuó 了:le 吗:ma
+อากาศที่นี่ดีมาก|这里:zhèlǐ 的:de 空气:kōngqì 很:hěn 好:hǎo
+เราต้องช่วยกันรักษาสิ่งแวดล้อม|我们:wǒmen 要:yào 保护:bǎohù 环境:huánjìng`;
+const LRAW=`@1|1|ทักทายและมารยาท|คำทักทายและคำสุภาพที่ต้องใช้ทุกวัน
+你好 谢谢 不客气 对不起 没关系 再见 早上好 晚安 请 欢迎 请问 我不懂 加油 你好吗 我很好 晚上好 好久不见 拜拜 恭喜 生日快乐 新年快乐
+@2|1|ฉัน คุณ เขา และคำชี้|สรรพนาม คำถามพื้นฐาน และคำที่ใช้ประกอบประโยค
+我 你 他 她 我们 你们 他们 是 不是 不 有 没有 什么 哪里 这里 这 那 这个 那个 那里 这边 那边 谁 哪 哪个 哪儿 的 吗 呢 吧 很 也 都 和
+@3|1|ตัวเลข|นับ 0 ถึงหมื่น และถามจำนวน
+零 一 二 三 四 五 六 七 八 九 十 百 千 两 半 万 第 几 多少 个 位
+@4|1|ครอบครัวและผู้คน|คนในครอบครัว เพื่อน และคำเรียกบุคคล
+爸爸 妈妈 哥哥 姐姐 弟弟 妹妹 朋友 孩子 老师 学生 爷爷 奶奶 老公 老婆 男朋友 女朋友 家人 宝宝 阿姨 同事 同学 邻居 客人 人 男 女 先生 小姐 女士 家
+@5|1|อาหารและเครื่องดื่ม|อาหารจานหลัก เครื่องดื่ม และความหิวกระหาย
+水 茶 咖啡 米饭 面条 肉 鸡肉 鱼 菜 水果 苹果 吃 喝 好吃 饿 渴 汤 啤酒 果汁 可乐 牛奶 面包 鸡蛋 冰 冰水 白开水 酒
+@6|1|วันและเวลา|เวลา วันในสัปดาห์ เดือน ปี
+今天 明天 昨天 现在 点 分钟 星期 月 年 早上 中午 下午 晚上 前天 后天 每天 今年 明年 去年 号 星期几 星期一 星期二 星期三 星期四 星期五 星期六 星期天 周末 小时 天 时间 早 晚
+@7|1|กริยาพื้นฐาน|การกระทำที่ใช้บ่อยที่สุด
+去 来 要 想 看 听 说 买 卖 睡觉 工作 学习 知道 喜欢 爱 做 住 坐 走 找 用 开 关 帮 问 等 回 进 出 见
+@8|1|กริยาเพิ่มเติม|กริยาที่ทำให้พูดได้หลากหลายขึ้น
+跑 告诉 认识 懂 记得 忘 带 拿 送 借 写 读 玩 洗 穿 笑 哭 开始 结束 觉得 希望 换 退 付
+@9|1|คุณศัพท์และราคา|ใหญ่ เล็ก ดี แพง ถูก และบรรยายสิ่งต่าง ๆ
+大 小 多 少 好 热 冷 新 漂亮 高兴 贵 便宜 钱 多少钱 快 慢 长 短 重 轻 难 容易 老 旧 年轻 干净 脏 好看 安静 吵 好玩 有意思 一样 有名
+@10|2|ไวยากรณ์พื้นฐาน|คำช่วยและคำวิเศษณ์ที่ทำให้ประโยคเป็นธรรมชาติ
+了 过 在 正在 会 能 应该 需要 给 跟 从 到 离 对 错 可以 一点 一起 一下 已经 还 先 再 就 没 别 比 最 更 真 太 非常 有点 可能 当然 以前 以后 马上 刚才 常常 有时候
+@11|2|คำเชื่อมและประโยคคำถาม|เพราะ ถ้า แต่ และคำถามรูปแบบต่าง ๆ
+但是 因为 所以 如果 然后 还是 或者 为什么 怎么 怎么样 怎么办 什么时候 多久 多大 对吗 好吗 是吗 有没有 是不是 要不要 能不能 可不可以
+@12|2|แนะนำตัวและภาษา|ชื่อ ประเทศ ภาษา อายุ และที่อยู่
+名字 姓 叫 国 国家 中国 泰国 曼谷 中国人 泰国人 外国人 中文 英语 泰语 岁 结婚 公司 地址 号码
+@13|2|วลีเอาตัวรอด|ประโยคสำเร็จรูปที่ช่วยได้เมื่อสื่อสารไม่ได้
+打扰一下 请说慢一点 请再说一遍 我听不懂 我不知道 我知道了 你会说英语吗 我会说一点中文 我是泰国人 厕所在哪里 我迷路了 我有预订 没问题 好的 等一下 麻烦你 没事 慢走 请多关照
+@14|2|ลักษณนามและหน่วยนับ|คำที่ใช้นับสิ่งของ ต้องใช้ทุกครั้งที่บอกจำนวน
+张 本 杯 瓶 件 双 条 只 辆 块 份 种 次 些 斤 公斤
+@15|2|กิจวัตรประจำวัน|ตื่นนอน ทำงาน ออกกำลังกาย และพักผ่อน
+起床 洗澡 刷牙 吃饭 做饭 上班 下班 上课 下课 出门 回家 看电视 看书 聊天 运动 散步 唱歌 跳舞 游泳 洗衣服 打扫 休息
+@16|2|สถานที่ในเมือง|ที่ที่ไปบ่อยในเมือง
+学校 医院 商店 厕所 街道 银行 公园 警察 邮局 红绿灯 路口 桥 电影院 博物馆 咖啡店 市场 图书馆 大学 办公室 教室 寺庙 广场 沙滩 海边 书店 理发店 洗衣店 城市 市中心
+@17|2|ทิศทางและการถามทาง|ซ้าย ขวา ใกล้ ไกล และบอกตำแหน่ง
+左 右 上 下 前 后 里 外 东 南 西 北 中间 旁边 对面 附近 前面 后面 上面 下面 里面 外面 远 近 迷路 直走 左转 右转 到了 地图 路线 方向 过马路
+@18|2|ร้านอาหาร|สั่งอาหาร เมนูยอดนิยม และจ่ายเงิน
+饺子 包子 炒饭 火锅 烤鸭 豆腐 粥 炸鸡 汉堡 蛋糕 冰淇淋 甜点 牛肉 猪肉 虾 菜单 服务员 点菜 买单 筷子 勺子 碗 杯子 辣 不要辣 打包 素食 几位 订位 推荐 招牌菜 外卖 小吃 夜市 午饭 晚饭 好喝 请客 餐厅
+@19|2|สีและรสชาติ|สีต่าง ๆ เครื่องปรุง และรสชาติอาหาร
+红色 黄色 蓝色 绿色 白色 黑色 粉红色 紫色 灰色 棕色 橙色 金色 银色 深色 浅色 颜色 盐 糖 油 酱油 醋 辣椒 蒜 香菜 花生 甜 咸 酸 苦 红酒
+@20|3|ช้อปปิ้ง|ซื้อของ ต่อรอง ลองเสื้อ และคืนสินค้า
+商场 超市 电梯 楼 衣服 鞋 打折 试穿 收银台 入口 出口 老板 便宜点 试一下 尺码 逛街 购物 合适 小号 中号 大号 试衣间 退货 质量 品牌 特产 礼物 包装 包 我要这个 我想买这个 太贵了 可以便宜一点吗 可以刷卡吗 请开发票
+@21|3|เงินและการชำระเงิน|จ่ายเงิน แลกเงิน บัตร และแอปจ่ายเงิน
+现金 刷卡 扫码 发票 人民币 元 付款 找钱 零钱 取钱 换钱 汇率 银行卡 信用卡 支付宝 微信支付 优惠 退款 小费 免费
+@22|3|เดินทางในเมือง|รถไฟใต้ดิน แท็กซี่ รถเมล์ และรถไฟ
+地铁 出租车 汽车 公共汽车 火车 高铁 自行车 摩托车 船 网约车 电动车 卡车 加油站 司机 车站 票 停 地铁站 换乘 终点 上车 下车 打车 堵车 打表 路 红灯 绿灯 站 走路 骑车 火车站 汽车站 火车票
+@23|3|สนามบิน|ตั๋ว เช็กอิน ตรวจคนเข้าเมือง และขึ้นเครื่อง
+机场 飞机 机票 护照 登机牌 行李 海关 航班 登机口 安检 起飞 到达 延误 签证 入境 出境 转机 座位 托运 随身行李 取行李 经济舱 商务舱
+@24|3|โรงแรมและท่องเที่ยว|จองห้อง เช็กอิน ของใช้ในห้อง และเที่ยวชมสถานที่
+酒店 预订 房间 单人间 双人间 入住 退房 钥匙 房卡 早餐 空调 热水 毛巾 前台 押金 床 被子 枕头 吹风机 牙刷 肥皂 洗发水 卫生纸 洗手间 修 坏了 旅游 景点 门票 拍照 导游 排队 行程 旅行社 纪念品
+@25|3|อากาศและฤดูกาล|ฝน แดด ลม อุณหภูมิ และสี่ฤดู
+天气 天气预报 下雨 雨 下雪 雪 太阳 风 云 晴天 阴天 温度 度 暖和 夏天 冬天 春天 秋天
+@26|3|สัตว์และธรรมชาติ|สัตว์ที่พบบ่อย ภูเขา ทะเล ต้นไม้
+狗 猫 鸟 马 牛 羊 猪 鸡 鸭 兔子 老虎 大象 熊猫 猴子 老鼠 蛇 蚊子 龙 山 海 河 湖 花 树
+@27|4|ร่างกายและความรู้สึก|อวัยวะ และบอกอารมณ์หรือสภาพร่างกาย
+头 脸 眼睛 耳朵 鼻子 嘴 牙 手 脚 腿 肚子 背 心 身体 开心 难过 生气 担心 害怕 忙 累 饱 困 舒服 方便
+@28|4|สุขภาพและร้านขายยา|อาการป่วย ยา และไปพบแพทย์
+药店 药 医生 感冒药 退烧药 止痛药 头疼 肚子疼 发烧 咳嗽 过敏 创可贴 口罩 吃药 药方 打针 检查 饭前 饭后 保险 急诊 看病 挂号 生病 不舒服 受伤 拉肚子 恶心 头晕 疼 病
+@29|4|เหตุฉุกเฉิน|ขอความช่วยเหลือ แจ้งตำรวจ และของหาย
+救命 帮忙 请帮我 我需要帮助 危险 小心 着火 救护车 报警 紧急 丢了 小偷 被偷了 警察局 大使馆
+@30|4|โทรศัพท์และออนไลน์|มือถือ อินเทอร์เน็ต ไวไฟ และแอป
+电话 手机 打电话 微信 网络 无线网 密码 电脑 充电 充电宝 没电 短信 下载 翻译 照片 视频 信号 上网 充电器
+@31|4|ของใช้ในบ้าน|เฟอร์นิเจอร์ เครื่องใช้ไฟฟ้า และห้องต่าง ๆ
+门 窗户 桌子 椅子 灯 电 电视 冰箱 风扇 洗衣机 厨房 卧室 客厅 垃圾 垃圾桶 书 笔 纸
+@32|4|เสื้อผ้าและของใช้ส่วนตัว|เสื้อผ้า เครื่องประดับ และของในร้านสะดวกซื้อ
+衬衫 裤子 裙子 外套 袜子 帽子 手表 眼镜 钱包 行李箱 便利店 零食 饮料 矿泉水 雨伞 纸巾 加热 袋子
+@33|5|ความเห็นและเหตุผล|แสดงความเห็น เหตุผล ความตั้งใจ และการตัดสินใจ
+意见 办法 问题 原因 结果 其实 虽然 可是 而且 除了 关于 为了 只要 一定 必须 突然 终于 比较 特别 差不多 大概 同意 参加 决定 选择 改变 愿意 打算 注意 以为
+@34|5|การงานและธุรกิจ|ประชุม สัมภาษณ์งาน สัญญา และการทำงานร่วมกัน
+会议 经理 合同 工资 面试 简历 项目 计划 客户 生意 报价 出差 加班 请假 邮件 文件 申请 负责 合作 经验 讨论 安排 通知
+@35|5|การเรียนและพัฒนาภาษา|สอบ ทบทวน ไวยากรณ์ วรรณยุกต์ และการพัฒนาตนเอง
+考试 成绩 作业 练习 复习 生词 句子 语法 发音 声调 汉字 意思 词典 课 准备 提高 进步 努力 解释 了解
+@36|5|สังคมและวัฒนธรรม|วัฒนธรรม ประเพณี สิ่งแวดล้อม และชีวิตความเป็นอยู่
+文化 历史 环境 健康 安全 社会 经济 关系 机会 习惯 生活 发展 影响 传统 节日 春节 保护 污染 空气 重要 世界`;
 const $=s=>document.querySelector(s);
 const words=[],cats=[];
 RAW.split('\n').forEach(l=>{if(!l.trim())return;if(l[0]==='#'){cats.push(l.slice(1));return}const[h,p,t,m]=l.split('|');words.push({h,p,t,m,c:cats[cats.length-1]})});
@@ -1087,9 +1377,9 @@ SRAW.split('\n').forEach(l=>{if(!l.trim())return;if(l[0]==='#'){scats.push(l.sli
   const[th,tk,...alts]=l.split('|');
   const t=tk.split(' ').map(x=>{const i=x.indexOf(':');return{h:x.slice(0,i),p:x.slice(i+1).replace(/_/g,' ')}});
   sents.push({th,t,ok:[t.map(x=>x.h).join(' ')].concat(alts),c:scats[scats.length-1]})});
-let cat='ทั้งหมด',sCat='ทั้งหมด',mode='learn',cur=null,hist=[],hide=false,shown=false,slow=false,score=0,total=0,streak=0,answered=false,qt=0,lastQ=null;
+let cat='ทั้งหมด',sCat='ทั้งหมด',sFilter=null,mode='lesson',cur=null,hist=[],hide=false,shown=false,slow=false,score=0,total=0,streak=0,answered=false,qt=0,lastQ=null;
 const pool=()=>words.filter(w=>cat==='ทั้งหมด'||w.c===cat);
-const sPool=()=>sents.filter(s=>sCat==='ทั้งหมด'||s.c===sCat);
+const sPool=()=>sFilter||sents.filter(s=>sCat==='ทั้งหมด'||s.c===sCat);
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
 const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/v/g,'u');
 const hzc=h=>h.length>6?'xs':h.length>3?'sm':'';
@@ -1099,10 +1389,11 @@ let voice=null;
 function pickVoice(){if(!hasTTS)return;const v=speechSynthesis.getVoices();voice=v.find(x=>/zh[-_]CN/i.test(x.lang))||v.find(x=>/^zh/i.test(x.lang))||null}
 if(hasTTS){pickVoice();speechSynthesis.onvoiceschanged=pickVoice}
 function speak(t){if(!hasTTS)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';if(voice)u.voice=voice;u.rate=slow?.55:.85;speechSynthesis.speak(u)}catch(e){}}
-function updateCount(){$('#count').textContent=mode==='sent'?sPool().length+' ประโยค':pool().length+' คำ'}
+function updateCount(){$('#count').textContent=mode==='lesson'?lessons.length+' บท':mode==='sent'?sPool().length+' ประโยค':pool().length+' คำ'}
 function renderChips(){
-  const base=mode==='sent'?scats:cats,on=mode==='sent'?sCat:cat;
-  const box=$('#chips'),sl=box.scrollLeft;
+  const box=$('#chips');box.style.display=mode==='lesson'?'none':'';
+  if(mode==='lesson'){updateCount();return}
+  const base=mode==='sent'?scats:cats,on=mode==='sent'?sCat:cat,sl=box.scrollLeft;
   box.innerHTML=['ทั้งหมด'].concat(base).map(c=>`<button class="${c===on?'on':''}" data-c="${c}">${c}</button>`).join('');
   box.querySelectorAll('button').forEach(b=>b.onclick=()=>{if(mode==='sent')sCat=b.dataset.c;else cat=b.dataset.c;hist=[];renderChips();start()});
   box.scrollLeft=sl;updateCount();
@@ -1117,7 +1408,7 @@ function renderList(){
     $('#lst').querySelectorAll('.it').forEach(e=>e.onclick=()=>speak(e.dataset.h))};
   $('#q').oninput=draw;draw();
 }
-function start(){updateCount();if(mode==='learn')nextWord(false);else if(mode==='quiz')newQ();else if(mode==='sent')newS();else renderList()}
+function start(){updateCount();if(mode==='lesson')renderLessons();else if(mode==='learn')nextWord(false);else if(mode==='quiz')newQ();else if(mode==='sent')newS();else renderList()}
 function nextWord(say=true){
   const p=pool();let w;do{w=p[Math.random()*p.length|0]}while(p.length>1&&cur&&w===cur);
   if(cur)hist.push(cur);cur=w;shown=false;renderLearn();if(say)speak(cur.h)
@@ -1142,10 +1433,10 @@ function renderLearn(){
   $('#rnd').onclick=()=>nextWord(true);
 }
 function newQ(){
-  const p=pool();let c;do{c=p[Math.random()*p.length|0]}while(p.length>1&&c===lastQ);
+  let c;if(mode==='lesson')c=lq.queue[lq.n];else{const p=pool();do{c=p[Math.random()*p.length|0]}while(p.length>1&&c===lastQ)}
   cur=c;lastQ=c;qt=Math.random()*3|0;if(qt===1&&!hasTTS)qt=0;answered=false;
   const opts=[cur];
-  for(const w of shuffle(words.filter(w=>w.c===cur.c)).concat(shuffle(words))){
+  const dp=dpool();for(const w of shuffle(dp.filter(w=>w.c===cur.c)).concat(shuffle(dp),shuffle(words))){
     if(opts.length>=4)break;if(opts.some(o=>clash(o,w,qt===1)))continue;opts.push(w)
   }
   renderQ(shuffle(opts));
@@ -1158,23 +1449,28 @@ function renderQ(opts){
   else if(qt===1)prompt=`<div class="q">ฟังเสียง แล้วเลือกความหมาย</div><button class="say" id="say" style="font-size:20px;padding:16px 28px">▶ เล่นเสียง</button>`;
   else prompt=`<div class="q">เลือกคำภาษาจีนที่ตรงกับความหมายนี้</div><div class="mn" style="font-size:28px;margin:0">${cur.m}</div>`;
   $('#stage').innerHTML=`
-  <div class="score"><span>ถูก <b>${score}</b> จาก <b>${total}</b> ข้อ</span><span>ถูกติดต่อกัน <b>${streak}</b></span></div>
+  <div class="score">${scoreHTML()}</div>
   <div class="card" style="min-height:220px">${prompt}<div class="fb" id="fb" aria-live="polite"></div></div>
   <div class="choices" id="ch">${opts.map((o,i)=>`<button ${zh?'lang="zh-CN" ':''}class="${zh?'zh'+(o.h.length>4?' sm':''):''}" data-i="${i}">${zh?o.h:o.m}</button>`).join('')}</div>
   <button class="next" id="nx" style="display:none">ข้อต่อไป</button>`;
   const sb=$('#say');if(sb)sb.onclick=()=>speak(cur.h);
   $('#ch').querySelectorAll('button').forEach(b=>b.onclick=()=>{
-    if(answered)return;answered=true;total++;
+    if(answered)return;answered=true;if(mode!=='lesson')total++;
     const ok=opts[+b.dataset.i]===cur;
-    if(ok){score++;streak++}else streak=0;
+    if(mode==='lesson'){lq.n++;if(ok)lq.right++;else lq.wrong.push(cur)}else if(ok){score++;streak++}else streak=0;
     $('#ch').querySelectorAll('button').forEach(x=>{x.disabled=true;if(opts[+x.dataset.i]===cur)x.classList.add('ok')});
     if(!ok)b.classList.add('bad');
     $('#fb').innerHTML=`<div class="hz sm" lang="zh-CN" style="font-size:${cur.h.length>4?28:44}px">${cur.h}</div><div class="py">${cur.p}</div><div>อ่านว่า ${cur.t} หมายถึง ${cur.m}</div><div style="margin-top:6px;font-weight:600;color:var(${ok?'--jade':'--seal'})">${ok?'ถูกต้อง':'ยังไม่ถูก คำตอบคือคำที่ไฮไลต์สีเขียว'}</div>`;
-    $('#nx').style.display='block';$('#nx').focus();speak(cur.h);
-    document.querySelector('.score').innerHTML=`<span>ถูก <b>${score}</b> จาก <b>${total}</b> ข้อ</span><span>ถูกติดต่อกัน <b>${streak}</b></span>`;
+    $('#nx').textContent=mode==='lesson'&&lq.n>=lq.max?'ดูผลคะแนน':'ข้อต่อไป';$('#nx').style.display='block';$('#nx').focus();speak(cur.h);
+    document.querySelector('.score').innerHTML=scoreHTML();
   });
-  $('#nx').onclick=newQ;
+  $('#nx').onclick=nextQ;
 }
+function scoreHTML(){
+  if(mode==='lesson'){const k=answered?lq.n:lq.n+1;return `<span>ข้อที่ <b>${Math.min(k,lq.max)}</b> จาก <b>${lq.max}</b></span><span>ถูก <b>${lq.right}</b></span>`}
+  return `<span>ถูก <b>${score}</b> จาก <b>${total}</b> ข้อ</span><span>ถูกติดต่อกัน <b>${streak}</b></span>`
+}
+function nextQ(){if(mode==='lesson'&&lq.n>=lq.max){showLQResult();return}newQ()}
 /* ---------- โหมดแต่งประโยค ---------- */
 let sCur=null,bank=[],ans=[],sState='play',sCounted=false,sScore=0,sTotal=0,sStreak=0,showPy=true,decoy=false,lastS=null,wrongSet=[];
 const tileById=id=>bank.find(t=>t.id===id);
@@ -1254,10 +1550,117 @@ function revealS(){
   ans=sCur.ok[0].split(' ').map(w=>{const t=bank.find(x=>!x.d&&x.h===w&&!used.has(x.id));used.add(t.id);return t.id});
   drawS();showAnswer(false);$('#chk').focus();
 }
+/* ---------- บทเรียน ---------- */
+const LEVELS=[null,
+ {name:'ระดับ 1 · พื้นฐาน',d:'คำที่ใช้ทุกวัน เริ่มจากศูนย์'},
+ {name:'ระดับ 2 · ขั้นต้น',d:'ไวยากรณ์ คำถาม และสถานที่ใกล้ตัว'},
+ {name:'ระดับ 3 · ใช้งานจริง',d:'ช้อปปิ้ง เดินทาง และท่องเที่ยว'},
+ {name:'ระดับ 4 · ขั้นกลาง',d:'ร่างกาย สุขภาพ เหตุฉุกเฉิน และของใช้'},
+ {name:'ระดับ 5 · แอดวานซ์',d:'แสดงความเห็น ทำงาน เรียน และสังคม'}];
+const byH=new Map(words.map(w=>[w.h,w]));
+const lessons=[];
+LRAW.split('\n').forEach(l=>{if(!l.trim())return;
+  if(l[0]==='@'){const[a,lv,title,desc]=l.slice(1).split('|');lessons.push({id:+a,lv:+lv,title,desc,ws:[],sents:[]});return}
+  const L=lessons[lessons.length-1];l.trim().split(/\s+/).forEach(h=>{const w=byH.get(h);if(w){w.l=L.id;L.ws.push(w)}})});
+sents.forEach(s=>{let m=0;s.t.forEach(t=>{const w=byH.get(t.h);m=Math.max(m,w&&w.l||99)});s.l=m;if(m<99)lessons[m-1].sents.push(s)});
+const exOf=(w,maxL)=>{let b=null;sents.forEach(s=>{if(s.l<=maxL&&s.t.some(t=>t.h===w.h)&&(!b||s.t.length<b.t.length))b=s});return b};
+let prog={best:{},seen:{}};
+try{const j=JSON.parse(localStorage.getItem('cn-lessons-v1')||'null');if(j&&j.best&&j.seen)prog=j}catch(e){}
+const saveProg=()=>{try{localStorage.setItem('cn-lessons-v1',JSON.stringify(prog))}catch(e){}};
+let LS={id:null,step:'study',i:0,list:false},lq={n:0,max:10,right:0,wrong:[],queue:[]};
+const REVIEW={id:0,lv:0,title:'ทบทวนรวม',desc:'',ws:[],sents:[]};
+const curLesson=()=>LS.id===0?REVIEW:lessons[LS.id-1];
+const unlockedWords=id=>[].concat(...lessons.slice(0,id).map(l=>l.ws));
+const reviewWords=()=>[].concat(...lessons.filter(l=>prog.seen[l.id]).map(l=>l.ws));
+function dpool(){if(mode!=='lesson'||LS.id===null)return words;const l=curLesson();return l.id?unlockedWords(l.id):l.ws}
+function renderLessons(){
+  LS.id=null;sFilter=null;$('#lbar').style.display='none';$('#lbar').innerHTML='';
+  const pass=l=>prog.best[l.id]>=80,done=lessons.filter(pass),nxt=lessons.find(l=>!pass(l));
+  const learned=[].concat(...done.map(l=>l.ws)).length,rv=reviewWords();
+  $('#stage').innerHTML=`
+  <div class="ovw"><div class="ovt"><span style="color:var(--ink);font-size:16px"><b>${done.length}</b> / ${lessons.length} บทที่ผ่านแล้ว</span><span>จำได้ ${learned} จาก ${words.length} คำ</span></div><div class="bar"><i style="width:${done.length/lessons.length*100}%"></i></div></div>
+  <button class="rvbtn" id="rv" ${rv.length>=4?'':'disabled'}>ทบทวนรวม · สุ่มจากคำในบทที่เริ่มเรียนแล้ว${rv.length>=4?'':' (เริ่มเรียนอย่างน้อย 1 บทก่อน)'}</button>
+  ${[1,2,3,4,5].map(n=>`<h2 class="lvh">${LEVELS[n].name}<span>${LEVELS[n].d}</span></h2>`+lessons.filter(l=>l.lv===n).map(l=>{
+    const b=prog.best[l.id],st=b>=80?`<span class="st ok">ผ่าน ${b}%</span>`:b!=null?`<span class="st">${b}%</span>`:prog.seen[l.id]?'<span class="st">กำลังเรียน</span>':l===nxt?'<span class="st ok">เริ่มที่นี่</span>':'';
+    return `<button class="lrow ${b>=80?'pass':''} ${l===nxt?'next':''}" data-id="${l.id}"><span class="no">${b>=80?'✓':l.id}</span><span class="lt"><b>บท ${l.id} · ${l.title}</b><small>${l.ws.length} คำ${l.sents.length?' · '+l.sents.length+' ประโยค':''}</small></span>${st}</button>`}).join('')).join('')}
+  <p class="note">ผ่านบทเมื่อทำแบบทดสอบได้ตั้งแต่ 80% ความคืบหน้าบันทึกไว้ในเบราว์เซอร์นี้</p>`;
+  document.querySelectorAll('.lrow').forEach(b=>b.onclick=()=>openLesson(+b.dataset.id));
+  const r=$('#rv');if(r)r.onclick=()=>{REVIEW.ws=reviewWords();openLesson(0)};
+  if(nxt&&!prog.seen[nxt.id]&&nxt.id>1){const e=document.querySelector('.lrow.next');if(e&&e.scrollIntoView&&0)e.scrollIntoView()}
+}
+function openLesson(id){
+  LS={id,step:id?'study':'quiz',i:0,list:false};
+  if(id){prog.seen[id]=1;saveProg()}
+  renderLessonBar();runStep();window.scrollTo(0,0)
+}
+function setStep(st){LS.step=st;LS.i=0;LS.list=false;if(hasTTS)try{speechSynthesis.cancel()}catch(e){}renderLessonBar();runStep()}
+function renderLessonBar(){
+  const l=curLesson(),bar=$('#lbar');bar.style.display='block';
+  const steps=(l.id?[['study','1 เรียนคำ']]:[]).concat([['quiz',l.id?'2 ทดสอบ':'ทดสอบรวม']],l.sents.length?[['sent','3 แต่งประโยค']]:[]);
+  bar.innerHTML=`<div class="lhead"><button id="lback">‹ บทเรียน</button><div><div class="ltitle">${l.id?'บท '+l.id+' · ':''}${l.title}</div><div class="lsub">${l.id?LEVELS[l.lv].name+' · '+l.ws.length+' คำ':l.ws.length+' คำจากบทที่เริ่มเรียนแล้ว'}</div></div></div>
+  <div class="lsteps" role="tablist">${steps.map(([k,t])=>`<button role="tab" aria-selected="${LS.step===k}" class="${LS.step===k?'on':''}" data-s="${k}">${t}</button>`).join('')}</div>`;
+  $('#lback').onclick=()=>{if(hasTTS)try{speechSynthesis.cancel()}catch(e){}renderLessons();window.scrollTo(0,0)};
+  bar.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>setStep(b.dataset.s));
+}
+function runStep(){
+  sFilter=null;
+  if(LS.step==='study')renderStudy();
+  else if(LS.step==='quiz')startLQ();
+  else{sFilter=curLesson().sents;newS()}
+}
+function renderStudy(){
+  const l=curLesson(),n=l.ws.length;
+  if(LS.list){
+    $('#stage').innerHTML=`<div class="row" style="margin:0 0 8px"><button class="main" id="tocard">เริ่มเรียนทีละคำ</button></div><div id="lst">${l.ws.map(w=>`<div class="it" data-h="${w.h}"><b class="zh${w.h.length>4?' long':''}" lang="zh-CN">${w.h}</b><div><div class="p">${w.p}</div><div class="t">${w.t} – ${w.m}</div></div><button aria-label="ฟังเสียง ${w.h}">▶</button></div>`).join('')}</div>`;
+    $('#stage').querySelectorAll('.it').forEach(e=>e.onclick=()=>speak(e.dataset.h));
+    $('#tocard').onclick=()=>{LS.list=false;renderStudy()};return
+  }
+  const w=l.ws[LS.i],veil=hide&&!shown,ex=exOf(w,l.id),last=LS.i===n-1;
+  $('#stage').innerHTML=`
+  <div class="stp"><span>${LS.i+1} / ${n}</span><div class="bar"><i style="width:${(LS.i+1)/n*100}%"></i></div><button class="lnk" id="vl">ดูทั้งหมด</button></div>
+  <label class="opt"><input type="checkbox" id="hide" ${hide?'checked':''}> ทายก่อน แล้วค่อยแตะดูคำตอบ</label>
+  <div class="card ${veil?'veil':''}" id="card" ${veil?'tabindex="0" role="button" aria-label="แตะเพื่อดูคำตอบ"':''}>
+    <div class="hz ${hzc(w.h)}" lang="zh-CN">${w.h}</div>
+    <div class="ans" ${veil?'aria-hidden="true"':''}><div class="py">${w.p}</div><div class="th">อ่านว่า ${w.t}</div><div class="mn">${w.m}</div>
+    ${ex?`<div class="exs"><span class="zh" lang="zh-CN">${ex.t.map(t=>t.h).join('')}</span><small>${ex.t.map(t=>t.p).join(' ')}</small>${ex.th}</div>`:''}</div>
+    <button class="say" id="say">▶ ฟังเสียง</button>
+  </div>
+  <div class="row"><button id="prev" ${LS.i?'':'disabled'}>ก่อนหน้า</button><button class="main" id="nx2">${last?'ไปทำแบบทดสอบ':'ถัดไป'}</button></div>`;
+  const reveal=()=>{if(veil){shown=true;renderStudy();const c=$('#card');if(c)c.focus()}};
+  $('#vl').onclick=()=>{LS.list=true;renderStudy()};
+  $('#hide').onchange=e=>{hide=e.target.checked;shown=false;renderStudy()};
+  $('#card').onclick=e=>{if(e.target.id==='say')return;reveal()};
+  $('#card').onkeydown=e=>{if((e.key==='Enter'||e.key===' ')&&e.target.id!=='say'){e.preventDefault();reveal()}};
+  $('#say').onclick=()=>speak(w.h);
+  $('#prev').onclick=()=>{if(LS.i){LS.i--;shown=false;renderStudy();speak(l.ws[LS.i].h)}};
+  $('#nx2').onclick=()=>{if(last){setStep('quiz')}else{LS.i++;shown=false;renderStudy();speak(l.ws[LS.i].h)}};
+}
+function startLQ(){
+  const l=curLesson(),pw=l.ws;
+  if(pw.length<4){$('#stage').innerHTML='<p class="note">ยังมีคำไม่พอสำหรับทดสอบ</p>';return}
+  const max=Math.min(10,pw.length);
+  lq={n:0,max,right:0,wrong:[],queue:shuffle(pw).slice(0,max)};answered=false;newQ()
+}
+function showLQResult(){
+  const l=curLesson(),pct=Math.round(lq.right/lq.max*100),pass=pct>=80;
+  if(l.id){prog.best[l.id]=Math.max(prog.best[l.id]||0,pct);saveProg()}
+  const nx=l.id&&pass&&lessons[l.id]?lessons[l.id]:null;
+  $('#stage').innerHTML=`
+  <div class="card" style="min-height:0"><div class="q">ผลการทดสอบ</div><div class="hz" style="font-size:64px">${pct}%</div><div class="th">ถูก ${lq.right} จาก ${lq.max} ข้อ</div>
+  <div class="mn">${pass?'ผ่านแล้ว เก่งมาก':'ต้องได้ 80% ขึ้นไปจึงจะผ่าน ลองทบทวนแล้วทำใหม่'}</div></div>
+  ${lq.wrong.length?`<h2 class="rw">คำที่ควรทบทวน</h2>`+lq.wrong.map(w=>`<div class="rwi" data-h="${w.h}"><span class="zh" lang="zh-CN">${w.h}</span><span class="py">${w.p}</span><span>${w.m}</span></div>`).join(''):''}
+  <div class="row wrap"><button id="again">ทำใหม่</button>${l.id&&!pass?'<button id="restudy">กลับไปเรียนคำ</button>':''}${l.sents.length?'<button id="gs">แต่งประโยค</button>':''}${nx?'<button class="main" id="gn">บทถัดไป</button>':'<button class="main" id="gl">รายการบท</button>'}</div>`;
+  $('#stage').querySelectorAll('.rwi').forEach(e=>e.onclick=()=>speak(e.dataset.h));
+  $('#again').onclick=startLQ;
+  const rs=$('#restudy');if(rs)rs.onclick=()=>setStep('study');
+  const gs=$('#gs');if(gs)gs.onclick=()=>setStep('sent');
+  const gn=$('#gn');if(gn)gn.onclick=()=>openLesson(nx.id);
+  const gl=$('#gl');if(gl)gl.onclick=()=>{renderLessons();window.scrollTo(0,0)};
+}
 /* ---------- แท็บ ---------- */
-const TABS={learn:'#tLearn',quiz:'#tQuiz',sent:'#tSent',list:'#tList'};
+const TABS={lesson:'#tLesson',learn:'#tLearn',quiz:'#tQuiz',sent:'#tSent',list:'#tList'};
 function setMode(m){
-  mode=m;if(hasTTS)try{speechSynthesis.cancel()}catch(e){}
+  mode=m;sFilter=null;LS.id=null;$('#lbar').style.display='none';if(hasTTS)try{speechSynthesis.cancel()}catch(e){}
   for(const k in TABS){const b=$(TABS[k]);b.classList.toggle('on',k===m);b.setAttribute('aria-selected',k===m)}
   hist=[];renderChips();start()
 }
